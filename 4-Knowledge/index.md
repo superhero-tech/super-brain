@@ -1,18 +1,18 @@
 # Knowledge Index
 
-Kategoryzowana lista każdej strony wiki w tym folderze. AI aktualizuje ten plik po każdym Ingest.
+A categorised list of every wiki page in this folder. The AI updates this file after every Ingest.
 
-Na start jest pusty. Wypełnia się po pierwszych ingestach.
+It starts empty. It fills up after your first ingests.
 
 ## Format
 
 ```
-### [Podfolder / Kategoria]
-- [[Nazwa Strony]] - krótki opis jednym zdaniem
+### [Subfolder / Category]
+- [[Page Name]] - one-sentence description
 ```
 
-## Kategorie
+## Categories
 
-<!-- AI dodaje kategorie i strony w miarę jak Knowledge rośnie -->
+<!-- The AI adds categories and pages as Knowledge grows -->
 
-_Pusto. Uruchom workflow Ingest na pierwszym pliku z Inbox żeby zacząć._
+_Empty. Run the Ingest workflow on your first file in Inbox to get started._

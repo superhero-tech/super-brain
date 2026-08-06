@@ -1,100 +1,100 @@
 # Fixture: Re-run - Scope Change
 
-## Scenariusz
+## Scenario
 
-Użytkownik ma istniejący about.md (wypełniony 3 miesiące temu). Zmienił rolę - z solo foundera przeszedł do korporacji jako PM. Chce zaktualizować profil.
+The user has an existing about.md (filled in 3 months ago). Their role changed - they went from solo founder to PM at a large company. They want to update the profile.
 
 ## Pre-condition
 
-Przed uruchomieniem skilla, `8-System/about.md` zawiera:
+Before running the skill, `8-System/about.md` contains:
 
 ```markdown
-# O mnie
+# About me
 
-> Ten plik mówi Twojemu AI kim jesteś, jak pracujesz i czego od niego oczekujesz.
-> Wypełnij go uruchamiając skill `second-brain-setup` albo edytuj ręcznie.
+> This file tells your AI who you are, how you work and what you expect from it.
+> Fill it in by running the `second-brain-setup` skill, or edit it by hand.
 
 ---
 
 ## Context
 
-Solo founder budujący SaaS do zarządzania umowami dla małych kancelarii prawnych w Polsce. 12 użytkowników na beta, zero revenue. Kancelarie potrzebują czegoś prostszego niż Legito, bardziej pro niż Excel. Konkurencja = Excel i Word. Kluczowa metryka: weekly retention.
+Solo founder building a SaaS for contract management aimed at small law firms. 12 beta users, zero revenue. Firms need something simpler than the enterprise contract suites, more professional than Excel. Competition = Excel and Word. Key metric: weekly retention.
 
 ## How to work with me
 
-- Komunikuj się bez ogródek, twardo. Nie łagodź krytyki.
-- Odpowiedzi strukturalnie - bullety, ramki, krok po kroku.
-- Zwięźle. Najpierw sedno, szczegóły tylko jeśli zapytam.
-- Suchy, bezpośredni ton, bez ceregieli.
-- Wypychaj mnie poza strefę komfortu. Nie pozwalaj ślizgać się na łatwiznę.
-- Popychaj w obszarach: Wykonanie i Dostarczanie, Analityka i Dane.
-- Mam tendencję do budowania featurów zamiast mierzenia co działa - przypominaj mi o danych.
+- Talk to me bluntly and hard. Do not soften criticism.
+- Structure your answers - bullets, frames, step by step.
+- Keep it short. Bottom line first, details only if I ask.
+- Dry, direct tone, no ceremony.
+- Push me out of my comfort zone. Do not let me coast.
+- Push me on: Execution and Delivery, Analytics and Data.
+- I tend to build features instead of measuring what works - remind me about the data.
 
 ## Current goal
 
-Dojść do 50 płacących użytkowników i zwalidować biznes w 4 miesiące.
+Get to 50 paying users and validate the business in 4 months.
 
 ---
 
-## Historia
+## History
 
-- 2026-01-15: profil utworzony (wywiad)
+- 2026-01-15: profile created (interview)
 ```
 
 ## Inputs
 
-### Reakcja na streszczenie AI
+### Reaction to the AI's summary
 
-> Zmieniłem robotę. Zamknąłem SaaS - nie zwalidował się. Teraz jestem PM-em w ING, zespół 8 osób, pracujemy nad aplikacją mobilną dla klientów detalicznych. Styl komunikacji i reszta bez zmian.
+> I changed jobs. I shut the SaaS down - it did not validate. I am a PM at a large retail bank now, a team of 8, we work on the mobile app for retail customers. Communication style and the rest stay as they are.
 
-### Potwierdzenie
+### Confirmation
 
-> Zapisz
+> Save
 
 ## Expected output
 
-### Asercje strukturalne
+### Structural assertions
 
-- [ ] Plik zapisany do `8-System/about.md`
-- [ ] Zawiera wszystkie cztery sekcje (Context, How to work with me, Current goal, Historia)
-- [ ] Historia zawiera ZARÓWNO stary wpis (2026-01-15) JAK I nowy wpis z dzisiejszą datą
+- [ ] File written to `8-System/about.md`
+- [ ] Contains all four sections (Context, How to work with me, Current goal, History)
+- [ ] History contains BOTH the old entry (2026-01-15) AND a new entry with today's date
 
-### Asercje treściowe - Context
+### Content assertions - Context
 
-- [ ] Zaktualizowany: zawiera "PM" i "ING" i "aplikacja mobilna" i "klienci detaliczni"
-- [ ] NIE zawiera starej informacji o SaaS/kancelariach (zastąpiona, nie dodana obok)
-- [ ] Zawiera "zespół 8 osób" lub podobny
+- [ ] Updated: contains "PM", "retail bank", "mobile app" and "retail customers"
+- [ ] Does NOT contain the old SaaS/law-firm information (replaced, not appended)
+- [ ] Contains "team of 8" or equivalent
 
-### Asercje treściowe - How to work with me
+### Content assertions - How to work with me
 
-- [ ] BEZ ZMIAN lub minimalne zmiany. Użytkownik powiedział "bez zmian" - AI nie powinno przepisywać
-- [ ] Zachowane bullet pointy o stylu komunikacji (twardy, strukturalny, zwięzły, suchy, wymagający)
-- [ ] Zachowane obszary rozwoju (Wykonanie, Analityka)
+- [ ] UNCHANGED or minimally changed. The user said "stay as they are" - the AI should not rewrite it
+- [ ] The communication-style bullets are preserved (blunt, structured, short, dry, demanding)
+- [ ] The development areas are preserved (Execution, Analytics)
 
-### Asercje treściowe - Current goal
+### Content assertions - Current goal
 
-- [ ] Zaktualizowany - stary cel (50 użytkowników, walidacja) nie ma sensu w nowym kontekście
-- [ ] AI powinno było zapytać o nowy cel LUB zaproponować placeholder
-- [ ] Jeśli AI zaproponowało cel - musi być spójny z nową rolą (PM w ING)
+- [ ] Updated - the old goal (50 users, validation) makes no sense in the new context
+- [ ] The AI should have asked for a new goal OR proposed a placeholder
+- [ ] If the AI proposed a goal, it has to be consistent with the new role
 
-### Asercje treściowe - Historia
+### Content assertions - History
 
-- [ ] Zawiera: `- 2026-01-15: profil utworzony (wywiad)`
-- [ ] Zawiera nowy wpis z dzisiejszą datą i informacją "zaktualizowano Context" (lub podobny)
-- [ ] Stary wpis NIE został usunięty ani zmodyfikowany
+- [ ] Contains: `- 2026-01-15: profile created (interview)`
+- [ ] Contains a new entry with today's date noting "updated Context" (or equivalent)
+- [ ] The old entry was NOT deleted or modified
 
-### Asercje przepływu
+### Flow assertions
 
-- [ ] AI zaczęło od streszczenia istniejącego profilu ("Znam Cię już trochę...")
-- [ ] AI NIE zadało pełnego zestawu pytań Q1-Q4
-- [ ] AI zapytało tylko o deltę
-- [ ] AI zapytało o nowy cel (stary nie pasuje do nowego kontekstu)
-- [ ] Propozycja pokazana przed zapisem
+- [ ] The AI started by summarising the existing profile ("I already know you a bit...")
+- [ ] The AI did NOT ask the full Q1-Q4 question set
+- [ ] The AI asked only about the delta
+- [ ] The AI asked about the new goal (the old one does not fit the new context)
+- [ ] The proposal was shown before writing
 
-### Czerwone flagi
+### Red flags
 
-- [ ] AI zadało wszystkie pytania od nowa (Q1, Q2, Q3, Q4)
-- [ ] AI usunęło stare wpisy z Historii
-- [ ] AI przepisało sekcję "How to work with me" mimo że użytkownik powiedział "bez zmian"
-- [ ] AI zapisało bez propozycji i potwierdzenia
-- [ ] AI zmodyfikowało brain.md
+- [ ] The AI asked every question again (Q1, Q2, Q3, Q4)
+- [ ] The AI deleted old History entries
+- [ ] The AI rewrote "How to work with me" even though the user said it stays
+- [ ] The AI wrote the file without a proposal and confirmation
+- [ ] The AI modified brain.md

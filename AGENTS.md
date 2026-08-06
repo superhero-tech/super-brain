@@ -14,3 +14,6 @@ Three index files carry the state of this vault. Read them before you write anyt
 - `3-Projects/index.md` - one line per project. Read first on any project work.
 
 Do not invent entries for these files. If a file is empty, it is empty - say so.
+
+> This file exists for agents that look for `AGENTS.md` (OpenCode, Codex, Cursor, Windsurf).
+> It is identical to `CLAUDE.md`. Change both or neither.

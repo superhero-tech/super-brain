@@ -1,91 +1,91 @@
 # Fixture: Interview Path - Solo Operator
 
-## Scenariusz
+## Scenario
 
-Użytkownik wybiera Ścieżkę B (wywiad). Profil: solo operator, pre-PMF, wearing every hat.
+The user picks Path B (interview). Profile: solo operator, pre-PMF, wearing every hat.
 
 ## Inputs
 
-### Krok 0: Wybór ścieżki
+### Step 0: Path choice
 
 > B
 
-### Q1 - Kontekst
+### Q1 - Context
 
-> Jestem solo founderem, robię wszystko sam - od kodu po marketing. Buduję SaaS do zarządzania umowami dla małych kancelarii prawnych w Polsce. Mam 12 użytkowników na beta, zero revenue, kończą mi się oszczędności. Kancelarie potrzebują czegoś prostszego niż Legito, ale bardziej pro niż Excel. Konkurencja to głównie Excel i Word, bo istniejące narzędzia są za drogie dla małych kancelarii (3-5 osób). Kluczowa metryka to retention - czy beta userzy wracają co tydzień.
+> I am a solo founder, I do everything myself - from the code to the marketing. I am building a SaaS for contract management aimed at small law firms. 12 users on beta, zero revenue, my savings are running out. Law firms need something simpler than the enterprise contract suites but more professional than Excel. My competition is mostly Excel and Word, because the existing tools are too expensive for a 3-5 person firm. My key metric is retention - do beta users come back every week.
 
-### Q2.1 - Bezpośredniość
-
-> A
-
-### Q2.2 - Struktura
+### Q2.1 - Directness
 
 > A
 
-### Q2.3 - Długość
+### Q2.2 - Structure
 
 > A
 
-### Q2.4 - Ton
+### Q2.3 - Length
+
+> A
+
+### Q2.4 - Tone
 
 > C
 
-### Q2.5 - Poziom Wyzwania
+### Q2.5 - Challenge level
 
 > A
 
-### Q3 - Obszary Rozwoju
+### Q3 - Development areas
 
-> 6 i 1. Wykonanie i Dostarczanie, Analityka i Dane. Mam tendencję do budowania featurów zamiast mierzenia co działa.
+> 6 and 1. Execution and Delivery, Analytics and Data. I tend to build features instead of measuring what works.
 
-### Q4 - Cel
+### Q4 - Goal
 
-> Dojść do 50 płacących użytkowników i zwalidować, czy ten biznes ma sens zanim skończą mi się pieniądze. Daję sobie 4 miesiące.
+> Get to 50 paying users and find out whether this business makes sense before I run out of money. I am giving myself 4 months.
 
-### Potwierdzenie
+### Confirmation
 
 > OK
 
 ## Expected output
 
-### Asercje strukturalne
+### Structural assertions
 
-- [ ] Plik zapisany do `8-System/about.md`
-- [ ] Zawiera nagłówek `# O mnie`
-- [ ] Zawiera sekcje: `## Context`, `## How to work with me`, `## Current goal`, `## Historia`
-- [ ] Sekcja Historia zawiera datowany wpis "profil utworzony" (lub podobny)
+- [ ] File written to `8-System/about.md`
+- [ ] Contains the heading `# About me`
+- [ ] Contains the sections `## Context`, `## How to work with me`, `## Current goal`, `## History`
+- [ ] The History section contains a dated "profile created" entry (or equivalent)
 
-### Asercje treściowe - Context
+### Content assertions - Context
 
-- [ ] Zawiera "solo founder" lub "jednoosobowo"
-- [ ] Zawiera "SaaS" i "kancelarie prawne" (lub "prawników")
-- [ ] Zawiera informację o beta (12 użytkowników) i braku revenue
-- [ ] Zawiera informację o konkurencji (Excel/Word vs drogie narzędzia)
+- [ ] Contains "solo founder" or equivalent
+- [ ] Contains "SaaS" and "law firms" (or "lawyers")
+- [ ] Contains the beta detail (12 users) and the lack of revenue
+- [ ] Contains the competitive picture (Excel/Word vs expensive tools)
 
-### Asercje treściowe - How to work with me
+### Content assertions - How to work with me
 
-- [ ] Zawiera 5-8 bullet pointów
-- [ ] Odzwierciedla wybory MC: bezpośredni/twardy (A), strukturalny (A), zwięzły (A), suchy ton (C), wymagający (A)
-- [ ] Zawiera odniesienie do obszarów rozwoju: Wykonanie/Dostarczanie i Analityka/Dane
-- [ ] Zawiera wskazówkę operacyjną o tendencji do budowania zamiast mierzenia
-- [ ] NIE sugeruje, że solo founder jest "mniej Product Builderem" niż ktoś w korporacji
+- [ ] Contains 5-8 bullets
+- [ ] Reflects the multiple-choice answers: blunt/hard (A), structured (A), short (A), dry tone (C), demanding (A)
+- [ ] References the development areas: Execution/Delivery and Analytics/Data
+- [ ] Contains an operational note about the tendency to build instead of measure
+- [ ] Does NOT imply that a solo founder is "less of a product builder" than someone in a corporate role
 
-### Asercje treściowe - Current goal
+### Content assertions - Current goal
 
-- [ ] Zawiera "50 płacących" i "4 miesiące" (lub synonimy)
-- [ ] Zawiera element walidacji biznesu
+- [ ] Contains "50 paying" and "4 months" (or synonyms)
+- [ ] Contains the business-validation element
 
-### Asercje przepływu (weryfikowane w trakcie, nie w output)
+### Flow assertions (checked during the run, not in the output)
 
-- [ ] Q1 zadane jako jeden blok z 6 podpytaniami (nie 6 osobnych wymian)
-- [ ] Q2.1-Q2.5 zadane po jednym (5 osobnych wymian)
-- [ ] Q3 pokazane jako lista 8 pozycji do wyboru
-- [ ] Propozycja about.md pokazana PRZED zapisem
-- [ ] AI czekało na potwierdzenie przed zapisem
+- [ ] Q1 asked as a single block with 6 sub-questions (not 6 separate exchanges)
+- [ ] Q2.1-Q2.5 asked one at a time (5 separate exchanges)
+- [ ] Q3 shown as a list of 8 options
+- [ ] The about.md proposal was shown BEFORE writing
+- [ ] The AI waited for confirmation before writing
 
-### Czerwone flagi
+### Red flags
 
-- [ ] AI podzieliło Q1 na 6 osobnych pytań
-- [ ] AI zrobiło Q2 jako pytanie otwarte zamiast MC
-- [ ] AI zapisało plik bez propozycji i potwierdzenia
-- [ ] AI zmodyfikowało brain.md
+- [ ] The AI split Q1 into 6 separate questions
+- [ ] The AI asked Q2 as an open question instead of multiple choice
+- [ ] The AI wrote the file without a proposal and confirmation
+- [ ] The AI modified brain.md

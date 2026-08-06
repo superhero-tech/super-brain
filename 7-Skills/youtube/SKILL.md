@@ -5,50 +5,50 @@ description: Create a video summary note from a YouTube URL, then compile into 4
 
 # YouTube Video Summary
 
-Tworzy ustrukturyzowaną notatkę z filmu na YouTube, a następnie kompiluje ją do strony wiki w Knowledge.
+Turns a YouTube video into a structured note, then compiles that note into a wiki page in Knowledge.
 
-## Kiedy używać
+## When to use
 
-- Chcesz podsumować film do czystej notatki z metadanymi i kluczowymi ideami
-- Dla tutoriali - output to step-by-step guide, nie streszczenie
+- You want a video turned into a clean note with metadata and key ideas
+- For tutorials the output is a step-by-step guide, not a summary
 
-## Jak wywołać
+## How to invoke
 
 - `/youtube https://youtube.com/watch?v=...`
-- "Zrób notatkę z tego filmu: [URL]"
+- "Make a note from this video: [URL]"
 
-## Jak to działa
+## How it works
 
-### 1. Wyciągnij metadane
+### 1. Pull the metadata
 
 ```bash
 yt-dlp --skip-download --print "%(title)s|||%(channel)s|||%(upload_date)s|||%(description).500s" "$ARGUMENTS"
 ```
 
-Jeśli yt-dlp nie działa: wyciągnij video ID z URL, użyj WebSearch.
+If yt-dlp fails: extract the video ID from the URL and use web search.
 
-### 2. Pobierz transkrypt
+### 2. Get the transcript
 
 ```bash
-yt-dlp --skip-download --write-auto-subs --sub-langs "en,pl" --sub-format "vtt" -o "/tmp/yt_transcript" "$ARGUMENTS"
+yt-dlp --skip-download --write-auto-subs --sub-langs "en" --sub-format "vtt" -o "/tmp/yt_transcript" "$ARGUMENTS"
 ```
 
-Jeśli nie działa: poproś użytkownika o wklejenie transkryptu z YouTube.
+Add more languages to `--sub-langs` when you need them. If it fails, ask the user to paste the transcript from YouTube.
 
-### 3. Sklasyfikuj typ filmu
+### 3. Classify the video
 
-- **Tutorial/Explainer**: walkthrough, demo, how-to → output to step-by-step guide
-- **Idea/Opinia**: teza, wywiad, perspektywa → output to key ideas + cytaty
+- **Tutorial/Explainer**: walkthrough, demo, how-to -> output a step-by-step guide
+- **Idea/Opinion**: thesis, interview, perspective -> output key ideas plus quotes
 
-### 4. Wygeneruj notatkę
+### 4. Generate the note
 
-**YAML Frontmatter:**
+**YAML frontmatter:**
 ```yaml
 ---
-date: RRRR-MM-DD
-title: "Tytuł Filmu"
-author: Nazwa Kanału
-source: [URL YouTube]
+date: YYYY-MM-DD
+title: "Video Title"
+author: Channel Name
+source: [YouTube URL]
 topics:
   - topic-1
   - topic-2
@@ -56,69 +56,71 @@ type: video
 ---
 ```
 
-**Dla tutoriali:**
+**For tutorials:**
 ```markdown
-# Tytuł
+# Title
 
-## Co to obejmuje
-[1-2 zdania]
+## What this covers
+[1-2 sentences]
 
-## Step-by-Step Tutorial
-### Krok 1: [Akcja]
-[Co kliknąć, wpisać, skonfigurować. Imperatywnie.]
+## Step-by-Step
+### Step 1: [Action]
+[What to click, type, configure. Imperative.]
 
 ## Tips & Gotchas
-- Praktyczne wskazówki i ograniczenia
+- Practical notes and limitations
 
 ## Source
 [URL]
 ```
 
-**Dla idei/opinii:**
+**For ideas/opinions:**
 ```markdown
-# Tytuł
+# Title
 
 ## Key Ideas
-- (5-10 kluczowych idei - bądź konkretny)
+- (5-10 key ideas - be specific)
 
 ## Summary
-[3-5 akapitów]
+[3-5 paragraphs]
 
 ## Notable Quotes
-> "Cytat z filmu"
+> "Quote from the video"
 
 ## Source
 [URL]
 ```
 
-**Co wyciągać:**
-- Konkretne przykłady i anegdoty (nie abstrahuj)
-- Liczby i metryki
-- Cytaty "my faktycznie robimy X" - gdy mówcy zdradzają praktykę vs teorię
-- Kontrariańskie twierdzenia
-- Narzędzia i produkty po nazwie
-- Metafory i modele mentalne
-- Sekcje Q&A - tam są najcenniejsze nuggets
+**What to extract:**
+- Concrete examples and anecdotes (do not abstract them away)
+- Numbers and metrics
+- "here is what we actually do" moments - where speakers reveal practice instead of theory
+- Contrarian claims
+- Tools and products by name
+- Metaphors and mental models
+- Q&A sections - the best nuggets hide there
 
-### 5. Zapisz i przetwórz (Karpathy)
+### 5. Save and process (Karpathy loop)
 
-**Krok A:** Zapisz notatkę do `2-Inbox/`
+**Step A:** Save the note to `2-Inbox/`
 
-**Krok B:** Kompiluj do Knowledge
-1. Sprawdź czy strona wiki na ten temat istnieje w `4-Knowledge/`
-2. Jeśli tak → AKTUALIZUJ (dodaj insighty, dodaj źródło do YAML)
-3. Jeśli nie → UTWÓRZ nową stronę w odpowiednim podfolderze `4-Knowledge/`
-4. Czytelna nazwa pliku, `[[backlinki]]`, `[source: ...]` cytaty
+**Step B:** Compile into Knowledge
+1. Check whether a wiki page on this topic exists in `4-Knowledge/`
+2. If yes -> UPDATE it (add insights, add the source to the YAML)
+3. If no -> CREATE a new page in the right `4-Knowledge/` subfolder
+4. Readable file name, `[[backlinks]]`, `[source: ...]` citations
 
-**Krok C:** Przenieś notatkę z `2-Inbox/` do `5-Raw/`
+**Step C:** Move the note from `2-Inbox/` to `5-Raw/`
+
+**Step D:** Update `4-Knowledge/index.md` and append to `4-Knowledge/log.md`
 
 ## Self-check
 
-- Czy ktoś może dyskutować o tym temacie czytając tylko moje notatki?
-- Dla tutoriali: czy ktoś może WYKONAĆ workflow bez oglądania filmu?
-- Czy wyciągnąłem konkretne liczby/metryki?
-- Czy złapałem sekcję Q&A?
-- Czy nie użyłem AI markerów (delve, tapestry, pivotal, foster)?
+- Could someone hold a conversation about this topic reading only my notes?
+- For tutorials: could someone RUN the workflow without watching the video?
+- Did I capture the concrete numbers and metrics?
+- Did I catch the Q&A section?
+- Did I avoid AI filler words (delve, tapestry, pivotal, foster)?
 
 ## Cleanup
 

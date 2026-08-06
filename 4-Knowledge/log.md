@@ -1,15 +1,15 @@
 # Knowledge Log
 
-Chronologiczna historia operacji na wiki. AI dopisuje wpis po każdym Ingest.
+Chronological history of wiki operations. The AI appends an entry after every Ingest and Lint.
 
 ## Format
 
 ```
-## [RRRR-MM-DD] ingest | krótki opis
-Źródło: [nazwa pliku]
-Wiki: [nazwa strony wiki] (utworzono/zaktualizowano)
+## [YYYY-MM-DD] ingest | short description
+Source: [file name]
+Wiki: [wiki page name] (created/updated)
 ```
 
 ---
 
-_Pusto. Pierwszy wpis pojawi się po pierwszym Ingest._
+_Empty. The first entry appears after your first Ingest._

@@ -1,19 +1,19 @@
 # Evals - second-brain-setup
 
-Trzy test fixtures. Każdy zawiera kanoniczne odpowiedzi (Inputs) i oczekiwane asercje (Expected output).
+Three test fixtures. Each holds canonical answers (Inputs) and expected assertions (Expected output).
 
-## Jak uruchomić
+## How to run
 
-1. Otwórz nową sesję AI z dostępem do vaulta
-2. Wyczyść (lub schowaj) istniejący `8-System/about.md`
-3. Uruchom skill `second-brain-setup`
-4. Podaj odpowiedzi z sekcji `## Inputs` danego fixture'a
-5. Sprawdź output przeciwko asercjom z `## Expected output`
+1. Open a fresh AI session with access to the vault
+2. Clear (or stash) the existing `8-System/about.md`
+3. Run the `second-brain-setup` skill
+4. Feed it the answers from the fixture's `## Inputs` section
+5. Check the output against the assertions in `## Expected output`
 
 ## Fixtures
 
-| Fixture | Ścieżka | Scenariusz |
+| Fixture | Path | Scenario |
 |---|---|---|
-| `fixture-assessment-gallup.md` | A (assessment) | Wklejone wyniki Gallup Top 5 + krótki follow-up |
-| `fixture-interview-solo.md` | B (interview) | Pełny wywiad, solo operator pre-PMF |
-| `fixture-rerun-scope-change.md` | Re-run | Istniejący about.md + zmiana roli, oczekiwana delta |
+| `fixture-assessment-gallup.md` | A (assessment) | Pasted Gallup Top 5 results plus a short follow-up |
+| `fixture-interview-solo.md` | B (interview) | Full interview, solo operator pre-PMF |
+| `fixture-rerun-scope-change.md` | Re-run | Existing about.md plus a role change, delta expected |

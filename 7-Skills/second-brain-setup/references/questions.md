@@ -1,96 +1,96 @@
-# Pytania second-brain-setup
+# second-brain-setup questions
 
-Zadawaj w tej kolejności. W trybie re-run pytaj tylko o to, co się zmieniło.
+Ask in this order. In re-run mode, ask only about what changed.
 
 ---
 
-## Q1 - Kontekst
+## Q1 - Context
 
-**Zadaj wszystkie sześć podpytań razem. Jedno wejście, jedna odpowiedź.**
+**Ask all six sub-questions together. One input, one answer.**
 
-Wstęp:
+Intro:
 
-> Opowiedz mi o swojej obecnej sytuacji. Żadnych kategorii do wyboru - odpowiedz swoimi słowami, tak jakbyś opisywał to znajomemu przy kawie.
+> Tell me about your current situation. No categories to pick from - answer in your own words, the way you would describe it to a friend over coffee.
 
-Pytania (zadaj łącznie, jednym blokiem):
+Questions (ask as one block):
 
 ```
-1. Jaka jest Twoja obecna rola? (własnymi słowami - nie musisz wybierać
-   ze standardowych stanowisk)
-2. W jakiej branży i firmie pracujesz? (wielkość, etap, model biznesowy)
-3. Nad jakimi produktami lub usługami teraz pracujesz?
-4. Kim są Twoi główni użytkownicy/klienci i co dla nich ważne?
-5. Jakie są Twoje kluczowe metryki biznesowe i ograniczenia?
-6. Z jakimi presjami konkurencyjnymi lub rynkowymi się mierzysz?
+1. What is your current role? (in your own words - you do not have to pick
+   from standard job titles)
+2. What industry and company do you work in? (size, stage, business model)
+3. What products or services are you working on right now?
+4. Who are your main users/customers and what matters to them?
+5. What are your key business metrics and constraints?
+6. What competitive or market pressure are you under?
 ```
 
 ---
 
-## Q2 - Styl Komunikacji
+## Q2 - Communication style
 
-**Pięć pytań multiple choice, zadawanych po jednym.**
+**Five multiple-choice questions, asked one at a time.**
 
-### Q2.1 - Bezpośredniość
+### Q2.1 - Directness
 
-> Jak chcesz, żebym się z Tobą komunikował?
+> How do you want me to talk to you?
 >
-> **A)** Bez ogródek, twardo. Wymagaj, nie łagodź krytyki.
-> **B)** Bezpośrednio, ale z szacunkiem. Szczerze, bez agresji.
-> **C)** Dyplomatycznie. Wprowadzaj delikatnie w trudne oceny.
+> **A)** Blunt and hard. Demand more, do not soften criticism.
+> **B)** Direct but respectful. Honest, not aggressive.
+> **C)** Diplomatic. Ease me into the hard calls.
 
-### Q2.2 - Struktura
+### Q2.2 - Structure
 
-> Jak wolisz dostawać odpowiedzi?
+> How do you prefer to get answers?
 >
-> **A)** Strukturalnie - bullety, ramki, krok po kroku.
-> **B)** Konwersacyjnie - płynna proza, rozmowa.
-> **C)** Mieszanie - dobierz do tematu.
+> **A)** Structured - bullets, frames, step by step.
+> **B)** Conversational - flowing prose, a discussion.
+> **C)** Mixed - match it to the topic.
 
-### Q2.3 - Długość
+### Q2.3 - Length
 
-> Ile tekstu ma być w moich odpowiedziach?
+> How much text do you want in my answers?
 >
-> **A)** Zwięźle. Najpierw sedno, szczegóły tylko jeśli zapytam.
-> **B)** Zbalansowane. Akapit kontekstu, potem odpowiedź.
-> **C)** Dogłębnie. Pokaż rozumowanie krok po kroku.
+> **A)** Short. Bottom line first, details only if I ask.
+> **B)** Balanced. A paragraph of context, then the answer.
+> **C)** Deep. Show me the reasoning step by step.
 
-### Q2.4 - Ton
+### Q2.4 - Tone
 
-> Jaki ton preferujesz?
+> What tone do you prefer?
 >
-> **A)** Formalny i profesjonalny.
-> **B)** Swobodny i przyjazny.
-> **C)** Suchy, bezpośredni, bez ceregieli.
+> **A)** Formal and professional.
+> **B)** Casual and friendly.
+> **C)** Dry, direct, no ceremony.
 
-### Q2.5 - Poziom Wyzwania
+### Q2.5 - Challenge level
 
-> Jak twardo mam Cię wypychać?
+> How hard should I push you?
 >
-> **A)** Wymagająco. Wypychaj poza strefę komfortu. Nie pozwalaj ślizgać się na łatwiznę.
-> **B)** Zbalansowane. Wspieraj, ale nie daj łatwo uciec.
-> **C)** Wspierająco. Już wystarczająco się na siebie naciskam.
+> **A)** Hard. Push me out of my comfort zone. Do not let me coast.
+> **B)** Balanced. Support me, but do not let me off easy.
+> **C)** Supportive. I already push myself plenty.
 
 ---
 
-## Q3 - Obszary Rozwoju
+## Q3 - Development areas
 
-**Multi-select. Użytkownik wybiera 2-3 z listy.**
+**Multi-select. The user picks 2-3 from the list.**
 
-> Wskaż 2-3 obszary, w których chcesz żebym Cię aktywnie popychał:
+> Pick 2-3 areas where you want me to actively push you:
 >
-> 1. Analityka i Dane
-> 2. User Experience i Design
-> 3. Zrozumienie Techniczne
-> 4. My��lenie Strategiczne
-> 5. Zarządzanie Interesariuszami
-> 6. Wykonanie i Dostarczanie
-> 7. Innowacja i Kreatywność
-> 8. Rynek i Konkurencja
+> 1. Analytics and Data
+> 2. User Experience and Design
+> 3. Technical Understanding
+> 4. Strategic Thinking
+> 5. Stakeholder Management
+> 6. Execution and Delivery
+> 7. Innovation and Creativity
+> 8. Market and Competition
 >
-> Coś jeszcze, czego nie ma na liście? (opcjonalne)
+> Anything else not on the list? (optional)
 
 ---
 
-## Q4 - Obecne Cele
+## Q4 - Current goals
 
-> Jaki jest Twój cel na najbliższe 6 miesięcy? Własnymi słowami.
+> What is your goal for the next 6 months? In your own words.

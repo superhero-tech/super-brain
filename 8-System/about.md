@@ -1,25 +1,25 @@
-# O mnie
+# About me
 
-> Ten plik mówi Twojemu AI kim jesteś, jak pracujesz i czego od niego oczekujesz.
-> Wypełnij go uruchamiając skill `second-brain-setup` albo edytuj ręcznie.
+> This file tells your AI who you are, how you work and what you expect from it.
+> Fill it in by running the `second-brain-setup` skill, or edit it by hand.
 
 ---
 
 ## Context
 
-<!-- Kim jesteś, nad czym pracujesz, w jakiej firmie/branży, kogo obsługujesz -->
+<!-- Who you are, what you work on, in what company and industry, who you serve -->
 
 ## How to work with me
 
-<!-- 5-8 bullet pointów: styl komunikacji, mocne strony, blind spots, jak AI ma framować rekomendacje, gdzie Cię popychać -->
-<!-- Jeśli masz wyniki Gallup CliftonStrengths, DISC, MBTI lub innego testu - wklej je do rozmowy z AI i poproś o wypełnienie tej sekcji -->
+<!-- 5-8 bullets: communication style, strengths, blind spots, how the AI should frame recommendations, where to push you -->
+<!-- If you have results from Gallup CliftonStrengths, DISC, MBTI or any other assessment, paste them into the conversation and ask the AI to fill this section in -->
 
 ## Current goal
 
-<!-- Jeden cel na najbliższe 6 miesięcy, własnymi słowami -->
+<!-- One goal for the next 6 months, in your own words -->
 
 ---
 
-## Historia
+## History
 
-- [RRRR-MM-DD]: profil utworzony
+- [YYYY-MM-DD]: profile created

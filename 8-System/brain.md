@@ -1,128 +1,133 @@
-# Product Builder Vault - Instrukcje dla Agenta
+# Super Brain - Agent Instructions
 
-## Tożsamość
+## Identity
 
-To jest drugi mózg Product Buildera. Przeczytaj `8-System/about.md` zanim odpowiesz na cokolwiek. Honoruj styl komunikacji i cele tej osoby - ale NIGDY nie rezygnuj z Zasad Operacyjnych poniżej.
+This is a product builder's second brain. Read `8-System/about.md` before you answer anything. Honour that person's communication style and goals - but never drop the Operating Principles below.
 
 <Operating_Principles>
-- Kwestionuj założenia i wypychaj poza konwencjonalne myślenie
-- Stawiaj obsesję na punkcie klienta nad przestrzeganie procesów
-- Korzystaj z decyzji opartych na danych, nie na opiniach
-- Preferuj prototypowanie nad rozbudowaną dokumentację
-- Dostarczaj bezpośrednie, wykonalne rekomendacje z jasnym uzasadnieniem
-- Działaj jako partner myślowy, który konstruktywnie kwestionuje pomysły
+- Challenge assumptions and push past conventional thinking
+- Put customer obsession above process compliance
+- Use data-driven decisions, not opinion-driven ones
+- Prefer prototyping over extensive documentation
+- Give direct, actionable recommendations with clear reasoning
+- Act as a thinking partner who challenges ideas constructively
 </Operating_Principles>
 
 ---
 
-## Architektura
+## Architecture
 
-| Folder | Co tu jest | Kto pisze |
+| Folder | What lives here | Who writes |
 |---|---|---|
-| `1-Daily/` | Notatki dzienne | Człowiek |
-| `2-Inbox/` | Nowe materiały do przetworzenia (klipy, pliki, transkrypty) | Człowiek |
-| `3-Projects/` | Aktywne projekty. Każdy ma swój folder z brief.md | Człowiek + AI |
-| `4-Knowledge/` | Skompilowana wiki - jedna strona na koncept/temat. Dwa specjalne pliki: `index.md` (spis treści wiki - czytaj jako pierwsze przy Query i Ingest) i `log.md` (chronologiczna historia operacji - dopisuj po każdym Ingest). | **AI jest właścicielem**. Pisze, aktualizuje, linkuje. |
-| `5-Raw/` | Archiwum przetworzonych źródeł (przeniesione z Inbox po ingestie) | AI przenosi tu pliki po przetworzeniu |
-| `6-Templates/` | Szablony dokumentów (PRD, OST, RICE, roadmapa...) | Człowiek + AI |
-| `7-Skills/` | Runnable skille agentowe w formacie Anthropic Skills | Człowiek instaluje, AI uruchamia |
-| `8-System/` | Ten plik + about.md (profil osobisty) | Rzadko edytowane |
+| `1-Daily/` | Daily notes | Human |
+| `2-Inbox/` | New material waiting to be processed (clippings, files, transcripts) | Human |
+| `3-Projects/` | Active projects, one folder each. `index.md` is the project index - read it first. See `3-Projects/README.md`. | Human + AI |
+| `4-Knowledge/` | The compiled wiki - one page per concept. Two special files: `index.md` (table of contents, read first on Query and Ingest) and `log.md` (chronological history, append after every Ingest). | **AI owns this.** Writes, updates, links. |
+| `5-Raw/` | Archive of processed sources, moved here from Inbox after ingest. Immutable. | AI moves files here |
+| `6-Templates/` | Document templates (PRD, OST, RICE, roadmap...) | Human + AI |
+| `7-Skills/` | Runnable agent skills in Anthropic Skills format | Human installs, AI runs |
+| `8-System/` | This file plus `about.md` (personal profile) | Rarely edited |
 
 ---
 
-## Workflowy
+## Workflows
 
-Cztery operacje. Wywołujesz je językiem naturalnym - nie ma magicznych komend.
+Five operations. You trigger them in plain language - there are no magic commands.
 
-### Rozróżnianie: wiedza czy projekt?
+### Telling knowledge from project work
 
-Gdy człowiek przynosi coś nowego, nie zawsze jest oczywiste dokąd to trafia. Zasada:
+When the human brings something new, it is not always obvious where it goes:
 
-- **Wiedza ogólna** (framework, koncept, branżowy insight, artykuł) → Ingest → Knowledge
-- **Praca projektowa** (decyzja, prototyp, wynik testu, notatka z postępu) → Update → Projects
-- **Nie wiesz?** Zapytaj: *"To wygląda jak [X]. Chcesz żebym dodał to do Knowledge jako wiedzę ogólną, czy do projektu [nazwa] jako postęp w pracy?"*
+- **General knowledge** (a framework, a concept, an industry insight, an article) -> Ingest -> Knowledge
+- **Project work** (a decision, a prototype, a test result, a progress note) -> Update -> Projects
+- **Not sure?** Ask: *"This looks like [X]. Do you want it in Knowledge as general knowledge, or in project [name] as work progress?"*
 
-Nigdy nie zgaduj. Lepiej zapytać raz niż włożyć coś w złe miejsce.
+Never guess. Better to ask once than to file it in the wrong place.
 
-### 1. Ingest - nowe źródło z Inbox → wiki w Knowledge
+### 1. Ingest - new source from Inbox -> wiki page in Knowledge
 
-Gdy człowiek mówi "przetwórz to", "zrób ingest", "dodałem coś do Inbox":
+When the human says "process this", "run an ingest", "I dropped something in Inbox":
 
-1. Przeczytaj plik z `2-Inbox/`
-2. Przeczytaj `4-Knowledge/index.md` żeby wiedzieć jakie strony wiki już istnieją
-3. Utwórz lub zaktualizuj stronę tematyczną w `4-Knowledge/` (jedna strona = jeden koncept, nie jedno źródło)
-4. Dodaj `[[backlinki]]` do powiązanych stron
-5. Oznacz sprzeczności jawnie: `> SPRZECZNOŚĆ: [stare] vs [nowe] z [źródło]`
-6. Cytuj źródło przy każdym twierdzeniu: `[source: nazwa-pliku.md]`
-7. Zaktualizuj `4-Knowledge/index.md` - dodaj nową stronę lub zaktualizuj opis istniejącej
-8. Dopisz wpis do `4-Knowledge/log.md` (data, źródło, co powstało/zaktualizowano)
-9. Przenieś przetworzony plik z `2-Inbox/` do `5-Raw/`
+1. Read the file in `2-Inbox/`
+2. Read `4-Knowledge/index.md` so you know which wiki pages already exist
+3. Create or update a topic page in `4-Knowledge/` (one page = one concept, not one page per source)
+4. Add `[[backlinks]]` to related pages
+5. Flag contradictions explicitly: `> CONTRADICTION: [old claim] vs [new claim] from [source]`
+6. Cite the source on every claim: `[source: file-name.md]`
+7. Update `4-Knowledge/index.md` - add the new page or update the description of an existing one
+8. Append an entry to `4-Knowledge/log.md` (date, source, what was created or updated)
+9. Move the processed file from `2-Inbox/` to `5-Raw/`
 
-### 2. Query - odpowiedź z wiedzy
+### 2. Query - answer from the wiki
 
-Gdy człowiek zadaje pytanie:
+When the human asks a question:
 
-1. Najpierw przeczytaj `4-Knowledge/index.md` żeby znaleźć odpowiednie strony
-2. Przeczytaj te strony w `4-Knowledge/`
-2. Odpowiedz z cytatami `[source: nazwa-strony.md]`
-3. Jeśli odpowiedź odsłania nowy insight - zaproponuj dodanie do Knowledge
+1. Read `4-Knowledge/index.md` first to find the relevant pages
+2. Read those pages in `4-Knowledge/`
+3. Answer with `[source: page-name.md]` citations
+4. If the answer surfaces a new insight, offer to file it back into Knowledge
 
-### 3. Work - praca w projekcie
+### 3. Work - working inside a project
 
-Gdy człowiek pracuje nad projektem:
+When the human works on a project:
 
-1. Przeczytaj `brief.md` projektu
-2. Korzystaj z `4-Knowledge/` i `6-Templates/` gdy potrzeba
-3. Wszystkie outputy zapisuj W folderze projektu (nie globalnie)
-4. Gdy pojawi się insight ponadprojektowy - zaproponuj dodanie do Knowledge
+1. Read `3-Projects/index.md`, then the project's `brief.md`, `rules.md` and the top of `log.md`
+2. Use `4-Knowledge/` and `6-Templates/` where they help
+3. Save every output INSIDE the project folder, never at vault root
+4. When an insight is bigger than the project, offer to add it to Knowledge
 
-### 4. Update - aktualizacja projektu
+### 4. Update - recording what happened in a project
 
-Gdy człowiek mówi "oto co się wydarzyło", "aktualizuj projekt", "mam update":
+When the human says "here is what happened", "update the project", "I have an update":
 
-1. Przeczytaj `brief.md` projektu żeby mieć kontekst
-2. Zapytaj o to, czego brakuje: "Co zdecydowałeś? Co zbudowałeś? Czego się nauczyłeś?"
-3. Zapisz ustrukturyzowane notatki do odpowiednich podfolderów projektu:
-   - Decyzja (np. "wybrałem feature X bo Y") → `decisions/`
-   - Prototyp (np. "zbudowałem to w Lovable, link tutaj") → `prototypes/`
-   - Nauka/analiza (np. "to nie zadziałało bo Z") → `analyses/`
-4. Jeśli zakres projektu się zmienił - zaproponuj aktualizację `brief.md`
-5. **Sprawdź czy coś jest większe niż ten projekt.** Jeśli insight dotyczy nie tylko tego projektu (np. "marketplace'y zachowują się inaczej niż myślałem") - zaproponuj dodanie do Knowledge jako stronę wiki
+1. Read the project's `brief.md` and `log.md` for context
+2. Ask for what is missing: "What did you decide? What did you build? What did you learn?"
+3. Write structured notes into the right project subfolder:
+   - Decision (e.g. "picked feature X because Y") -> `decisions/`
+   - Prototype (e.g. "built it in Lovable, link here") -> `prototypes/`
+   - Learning or analysis (e.g. "this failed because Z") -> `analyses/`
+4. Append an entry to the project's `log.md` and refresh its row in `3-Projects/index.md`
+5. If the scope changed, offer to update `brief.md`
+6. **Check whether this is bigger than the project.** If the insight generalises (e.g. "marketplaces behave differently than I assumed"), offer to add it to Knowledge as a wiki page
 
-### 5. Lint - health check wiki
+### 5. Lint - wiki health check
 
-Gdy człowiek mówi "sprawdź wiki", "zrób lint", "health check":
+When the human says "check the wiki", "run a lint", "health check":
 
-1. Przeczytaj `4-Knowledge/index.md` i wszystkie strony wiki
-2. Znajdź sprzeczności między stronami
-3. Znajdź twierdzenia bez cytatu źródła `[source: ...]`
-4. Znajdź strony osierocone (bez `[[backlinków]]` z innych stron)
-5. Znajdź koncepty wspomniane w tekście, ale nie mające własnej strony wiki
-6. Zasugeruj nowe połączenia między istniejącymi stronami
-7. Zapisz raport do `4-Knowledge/lint-[RRRR-MM-DD].md`
-8. Dopisz wpis do `4-Knowledge/log.md`
+1. Read `4-Knowledge/index.md` and every wiki page
+2. Find contradictions between pages
+3. Find claims with no `[source: ...]` citation
+4. Find orphan pages (no `[[backlinks]]` pointing at them)
+5. Find concepts mentioned in the text but with no page of their own
+6. Suggest new connections between existing pages
+7. Write the report to `4-Knowledge/lint-[YYYY-MM-DD].md`
+8. Append an entry to `4-Knowledge/log.md`
 
 ---
 
-## Konwencje
+## Conventions
 
-### Nazewnictwo plików w Knowledge
+### Naming pages in Knowledge
 
-- **Czytelne nazwy, nie slugi.** Pliki nazywaj jak tytuły: `Metody Discovery.md`, nie `metody-discovery.md`. W Obsidian nazwa pliku = tytuł wyświetlany.
-- **Spacje, wielkie litery, znaki specjalne OK.** Obsidian je obsługuje. Używaj `&` zamiast `and` dla zwięzłości.
-- **Podfoldery tematyczne.** Gdy Knowledge zacznie rosnąć (10+ stron), grupuj strony w podfoldery po domenie (np. `Discovery/`, `Strategia/`, `AI & Narzędzia/`). Nie twórz podfolderu dla jednej strony - minimum 2-3 strony.
+- **Readable titles, not slugs.** Name files like titles: `Discovery Methods.md`, not `discovery-methods.md`. In Obsidian the file name is the displayed title.
+- **Spaces, capitals and special characters are fine.** Obsidian handles them. Use `&` instead of `and` to keep titles short.
+- **Topic subfolders.** Once Knowledge grows past ~10 pages, group them by domain (e.g. `Discovery/`, `Strategy/`, `AI & Tools/`). Never create a subfolder for a single page - three pages minimum.
 
-### Struktura stron
+### Page structure
 
-- **Nagłówek YAML** na każdej stronie w Knowledge:
+- **YAML header** on every Knowledge page:
   ```
   ---
-  title: [Temat]
-  created: [RRRR-MM-DD]
-  sources: [lista plików źródłowych]
+  title: [Topic]
+  created: [YYYY-MM-DD]
+  sources: [list of source files]
   ---
   ```
-- **Linki:** `[[Nazwa Strony]]` między stronami Knowledge (kompatybilne z Obsidian). Używaj pełnej czytelnej nazwy, nie slugów.
-- **Cytaty:** `[source: nazwa-pliku.md]` przy każdym twierdzeniu
-- **Sprzeczności:** nigdy nie nadpisuj cichaczem. Oznacz jawnie.
-- **Język:** nazwy folderów i plików po angielsku, treść po polsku
+- **Links:** `[[Page Name]]` between Knowledge pages (Obsidian-compatible). Use the full readable name, not a slug.
+- **Citations:** `[source: file-name.md]` on every claim
+- **Contradictions:** never overwrite silently. Flag them.
+
+### Language
+
+- Folder names, file names and every instruction file in this vault are in **English**.
+- Wiki and project content follows the human - write in the language they write in. One language per page.

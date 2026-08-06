@@ -1,0 +1,201 @@
+cancellation_id,account_id,signup_date,cancel_date,plan,seats,mrr_usd,acquisition_channel,stated_reason,other_text,onboarding_sessions,resubscribed_same_plan_90d
+can_0001,acct_00449,2025-06-09,2026-04-04,starter,4,40.87,partner,too_expensive,,2.7,0
+can_0002,acct_00235,2025-10-11,2026-05-11,team,14,109.89,organic,no_longer_needed,we never got the wider team to actually log in,3.3,0
+can_0003,acct_00585,2025-09-06,2026-03-29,starter,3,26.72,partner,too_expensive,,3.1,0
+can_0004,acct_00479,2025-02-18,2025-07-12,team,12,96.24,organic,no_longer_needed,we could not get it into the daily routine,4.0,0
+can_0005,acct_00144,2025-06-23,2025-11-20,business,28,181.71,outbound,too_expensive,it sat unused for two months and then renewal hit,3.4,1
+can_0006,acct_00554,2025-08-15,2026-06-30,starter,2,21.79,organic,too_expensive,,4.5,1
+can_0007,acct_00169,2025-09-06,2026-06-30,starter,4,34.8,outbound,too_expensive,we never got the wider team to actually log in,3.6,1
+can_0008,acct_00803,2025-08-21,2026-04-19,starter,3,31.47,partner,too_expensive,,3.3,0
+can_0009,acct_00059,2025-01-30,2026-02-25,business,38,266.73,organic,too_expensive,the champion who bought it left and nobody picked it up,2.9,0
+can_0010,acct_00692,2025-01-30,2026-01-20,business,8,60.36,paid_search,too_expensive,"only two people ever used it, the rest stayed in spreadsheets",4.3,1
+can_0011,acct_00579,2025-01-21,2026-03-09,team,18,137.19,partner,missing_feature,,3.8,0
+can_0012,acct_00308,2025-05-03,2025-12-19,team,14,122.99,outbound,switched_tool,,2.5,0
+can_0013,acct_00136,2025-10-16,2026-03-11,team,20,140.71,referral,missing_feature,"no API, we could not connect it to our stack",1.4,0
+can_0014,acct_00670,2025-10-06,2026-06-12,starter,3,26.02,partner,too_expensive,,2.8,0
+can_0015,acct_00761,2025-02-23,2025-08-05,starter,2,21.84,partner,switched_tool,,1.6,0
+can_0016,acct_00867,2025-04-15,2026-06-08,starter,2,20.6,organic,switched_tool,moved to a competitor with a native integration,4.3,0
+can_0017,acct_00565,2025-06-20,2025-11-28,starter,1,8.34,outbound,too_expensive,it sat unused for two months and then renewal hit,2.1,0
+can_0018,acct_00441,2025-03-18,2026-03-27,business,45,375.04,paid_search,missing_feature,missing the reporting export we needed,4.1,1
+can_0019,acct_00363,2025-01-21,2025-10-26,starter,2,21.05,partner,too_expensive,"only two people ever used it, the rest stayed in spreadsheets",5.0,1
+can_0020,acct_00423,2025-05-02,2025-10-27,team,18,167.47,organic,too_expensive,,3.2,0
+can_0021,acct_00392,2025-05-08,2025-12-25,starter,2,21.83,organic,switched_tool,,1.8,0
+can_0022,acct_00409,2025-06-06,2026-01-03,team,13,105.97,referral,too_expensive,,5.0,1
+can_0023,acct_00340,2025-09-18,2026-06-30,team,19,146.36,organic,too_expensive,,1.6,0
+can_0024,acct_00447,2025-05-16,2025-09-07,starter,3,29.7,partner,missing_feature,"no API, we could not connect it to our stack",1.9,0
+can_0025,acct_00552,2025-01-23,2025-12-07,business,62,420.36,paid_search,no_longer_needed,,5.0,1
+can_0026,acct_00683,2025-06-10,2025-11-15,team,2,18.58,outbound,switched_tool,moved to a competitor with a native integration,3.9,0
+can_0027,acct_00631,2025-08-04,2026-05-20,team,9,65.95,partner,too_expensive,,3.8,0
+can_0028,acct_00330,2025-04-18,2026-02-27,team,5,38.82,outbound,too_expensive,,4.3,0
+can_0029,acct_00635,2025-03-28,2025-08-13,team,9,73.65,referral,too_expensive,,4.2,1
+can_0030,acct_00048,2025-04-26,2025-11-08,starter,3,30.5,paid_search,other,,1.1,0
+can_0031,acct_00250,2025-10-22,2026-05-04,team,6,48.84,paid_search,too_expensive,we could not get it into the daily routine,2.4,0
+can_0032,acct_00713,2025-02-24,2026-01-02,business,28,231.93,partner,too_expensive,,2.9,1
+can_0033,acct_00573,2025-08-22,2026-02-01,team,15,136.68,partner,too_expensive,,3.6,0
+can_0034,acct_00163,2025-09-16,2026-06-30,team,20,170.58,outbound,too_expensive,,2.8,0
+can_0035,acct_00731,2025-09-24,2026-06-30,team,11,94.5,referral,missing_feature,"no SSO, security would not sign off",3.2,0
+can_0036,acct_00724,2025-03-12,2025-08-31,starter,2,19.57,paid_search,too_expensive,,4.6,1
+can_0037,acct_00878,2025-02-01,2025-08-20,starter,2,19.14,partner,too_expensive,we never got the wider team to actually log in,3.8,0
+can_0038,acct_00753,2025-07-19,2026-05-24,team,2,15.5,partner,other,,3.2,0
+can_0039,acct_00818,2025-09-06,2025-12-24,business,52,362.22,outbound,too_expensive,,3.7,1
+can_0040,acct_00086,2025-10-01,2026-01-17,business,47,312.08,outbound,switched_tool,consolidated onto the suite we already pay for,3.9,0
+can_0041,acct_00285,2025-06-17,2026-01-06,starter,3,26.91,outbound,switched_tool,moved to a competitor with a native integration,2.3,0
+can_0042,acct_00773,2025-01-27,2025-10-28,team,14,124.13,organic,too_expensive,we never got the wider team to actually log in,3.5,1
+can_0043,acct_00224,2025-03-06,2026-02-06,starter,3,25.98,outbound,too_expensive,,3.6,0
+can_0044,acct_00320,2025-02-28,2025-08-25,business,39,300.79,partner,missing_feature,"no SSO, security would not sign off",3.4,0
+can_0045,acct_00249,2025-04-12,2025-08-23,business,51,431.71,organic,switched_tool,,2.2,0
+can_0046,acct_00678,2025-03-03,2026-03-22,business,43,331.11,referral,too_expensive,we could not get it into the daily routine,1.7,0
+can_0047,acct_00725,2025-09-08,2026-02-04,starter,2,21.36,paid_search,missing_feature,approval workflows were too rigid for us,2.4,0
+can_0048,acct_00607,2025-10-03,2026-06-30,team,14,120.71,referral,too_expensive,,4.4,0
+can_0049,acct_00685,2025-08-19,2026-03-26,team,16,115.63,outbound,too_expensive,,2.0,0
+can_0050,acct_00570,2025-04-19,2026-01-20,team,20,149.25,organic,too_expensive,honestly we never found the time to set it up properly,3.7,0
+can_0051,acct_00662,2025-09-08,2026-06-30,business,45,358.58,outbound,too_expensive,,3.3,0
+can_0052,acct_00436,2025-05-05,2026-01-11,team,12,90.73,partner,too_expensive,the champion who bought it left and nobody picked it up,3.0,0
+can_0053,acct_00197,2025-04-29,2025-10-02,team,9,69.94,paid_search,too_expensive,renewal came round before we finished the rollout,4.2,0
+can_0054,acct_00304,2025-09-26,2026-06-30,business,17,145.24,paid_search,missing_feature,missing the reporting export we needed,2.6,0
+can_0055,acct_00715,2025-05-21,2025-09-16,team,12,100.01,paid_search,too_expensive,,3.5,0
+can_0056,acct_00053,2025-10-21,2026-06-18,business,51,423.85,referral,too_expensive,budget was cut across the board this quarter,2.6,0
+can_0057,acct_00088,2025-10-23,2026-06-30,team,13,106.98,paid_search,switched_tool,moved to a competitor with a native integration,3.1,0
+can_0058,acct_00305,2025-04-26,2026-04-23,starter,1,9.95,partner,no_longer_needed,,2.4,0
+can_0059,acct_00161,2025-02-20,2025-09-09,team,10,85.21,paid_search,too_expensive,"only two people ever used it, the rest stayed in spreadsheets",4.6,0
+can_0060,acct_00720,2025-08-29,2026-04-30,starter,2,18.8,outbound,too_expensive,honestly we never found the time to set it up properly,4.0,1
+can_0061,acct_00273,2025-04-12,2026-02-18,starter,2,21.0,paid_search,too_expensive,renewal came round before we finished the rollout,2.8,1
+can_0062,acct_00717,2025-10-19,2026-06-18,starter,4,39.77,outbound,too_expensive,finance pushed back on the per seat pricing,4.0,0
+can_0063,acct_00027,2025-01-21,2025-12-03,team,7,50.48,organic,missing_feature,,2.4,0
+can_0064,acct_00180,2025-01-11,2025-08-31,starter,4,39.54,outbound,switched_tool,,2.3,0
+can_0065,acct_00482,2025-10-27,2026-06-30,business,21,141.98,referral,missing_feature,"no SSO, security would not sign off",0.6,0
+can_0066,acct_00834,2025-06-18,2026-04-19,team,8,73.08,partner,too_expensive,we could not get it into the daily routine,4.6,0
+can_0067,acct_00424,2025-07-26,2026-06-30,starter,2,18.31,organic,too_expensive,it sat unused for two months and then renewal hit,3.6,0
+can_0068,acct_00295,2025-08-15,2025-12-14,starter,1,9.66,outbound,too_expensive,,4.0,1
+can_0069,acct_00096,2025-05-03,2025-10-26,business,36,279.6,paid_search,too_expensive,we could not get it into the daily routine,4.1,1
+can_0070,acct_00484,2025-09-13,2026-05-15,starter,2,21.26,paid_search,switched_tool,moved to a competitor with a native integration,2.9,0
+can_0071,acct_00349,2025-09-18,2026-03-01,team,8,74.35,partner,missing_feature,approval workflows were too rigid for us,2.1,0
+can_0072,acct_00458,2025-10-28,2026-06-30,team,13,100.77,partner,switched_tool,consolidated onto the suite we already pay for,2.0,0
+can_0073,acct_00245,2025-08-22,2026-05-08,team,9,75.22,partner,too_expensive,,4.3,0
+can_0074,acct_00841,2025-08-31,2026-06-17,team,12,85.45,paid_search,too_expensive,,5.0,1
+can_0075,acct_00016,2025-06-19,2025-11-12,team,14,131.62,paid_search,switched_tool,moved to a competitor with a native integration,2.7,0
+can_0076,acct_00873,2025-05-16,2026-02-08,team,19,136.76,referral,too_expensive,"only two people ever used it, the rest stayed in spreadsheets",1.7,0
+can_0077,acct_00233,2025-09-07,2026-06-30,business,48,339.07,organic,too_expensive,honestly we never found the time to set it up properly,3.6,1
+can_0078,acct_00048,2025-02-21,2026-01-09,team,19,166.34,referral,too_expensive,we never got the wider team to actually log in,4.0,1
+can_0079,acct_00175,2025-09-29,2026-06-30,starter,2,17.28,paid_search,too_expensive,,4.2,0
+can_0080,acct_00473,2025-09-12,2026-06-30,starter,2,20.4,referral,other,,2.1,0
+can_0081,acct_00602,2025-05-28,2026-06-06,team,11,99.04,referral,too_expensive,finance pushed back on the per seat pricing,4.2,1
+can_0082,acct_00110,2025-06-04,2025-12-17,business,60,442.69,paid_search,too_expensive,,3.1,0
+can_0083,acct_00282,2025-06-01,2025-09-15,team,7,66.29,organic,too_expensive,,2.9,0
+can_0084,acct_00225,2025-09-12,2026-05-11,business,56,478.08,paid_search,missing_feature,"no API, we could not connect it to our stack",1.1,0
+can_0085,acct_00041,2025-03-12,2026-05-02,business,39,314.92,referral,missing_feature,,4.1,0
+can_0086,acct_00806,2025-06-01,2026-02-18,team,15,110.07,partner,too_expensive,renewal came round before we finished the rollout,3.6,0
+can_0087,acct_00824,2025-05-12,2026-04-18,team,2,18.14,organic,too_expensive,the champion who bought it left and nobody picked it up,3.0,0
+can_0088,acct_00015,2025-07-23,2026-06-30,team,14,131.66,referral,missing_feature,,2.3,0
+can_0089,acct_00381,2025-05-15,2026-06-13,business,49,393.64,organic,too_expensive,,4.5,1
+can_0090,acct_00651,2025-10-15,2026-06-30,business,40,333.47,outbound,switched_tool,consolidated onto the suite we already pay for,3.0,0
+can_0091,acct_00551,2025-01-20,2025-09-27,business,35,233.35,paid_search,too_expensive,we only ever used it for one workflow out of the four we planned,4.3,0
+can_0092,acct_00425,2025-10-04,2026-06-30,team,6,53.11,organic,too_expensive,,3.8,0
+can_0093,acct_00876,2025-07-09,2026-01-31,team,4,30.82,referral,missing_feature,,0.8,0
+can_0094,acct_00869,2025-07-03,2025-11-06,starter,3,32.49,outbound,too_expensive,"only two people ever used it, the rest stayed in spreadsheets",4.0,1
+can_0095,acct_00806,2025-01-11,2025-05-11,starter,2,19.9,partner,missing_feature,missing the reporting export we needed,1.2,0
+can_0096,acct_00284,2025-04-21,2025-11-21,starter,4,35.27,paid_search,too_expensive,we never got the wider team to actually log in,4.5,1
+can_0097,acct_00244,2025-01-14,2025-06-25,starter,1,8.54,partner,too_expensive,,3.8,1
+can_0098,acct_00797,2025-08-04,2026-06-30,team,15,109.89,referral,no_longer_needed,it sat unused for two months and then renewal hit,2.9,0
+can_0099,acct_00032,2025-01-23,2026-01-19,business,27,184.97,organic,too_expensive,,3.7,1
+can_0100,acct_00068,2025-08-16,2025-12-26,team,14,101.92,paid_search,too_expensive,renewal came round before we finished the rollout,2.6,0
+can_0101,acct_00102,2025-07-15,2026-06-30,team,8,70.2,organic,switched_tool,moved to a competitor with a native integration,1.8,0
+can_0102,acct_00848,2025-04-21,2026-03-02,business,26,207.23,outbound,too_expensive,the champion who bought it left and nobody picked it up,2.1,0
+can_0103,acct_00486,2025-05-11,2026-02-21,team,10,80.69,organic,too_expensive,,3.6,0
+can_0104,acct_00576,2025-07-10,2025-12-18,starter,3,25.49,partner,no_longer_needed,,2.4,0
+can_0105,acct_00361,2025-08-05,2025-12-04,team,9,82.57,organic,too_expensive,,2.6,0
+can_0106,acct_00588,2025-02-25,2025-11-26,business,31,230.49,paid_search,too_expensive,honestly we never found the time to set it up properly,3.4,0
+can_0107,acct_00711,2025-10-13,2026-01-29,team,18,162.69,referral,missing_feature,,0.2,0
+can_0108,acct_00580,2025-06-23,2026-03-24,starter,3,27.34,outbound,missing_feature,,4.9,1
+can_0109,acct_00465,2025-09-29,2026-04-22,starter,3,24.92,referral,other,,4.0,0
+can_0110,acct_00773,2025-10-18,2026-06-30,starter,1,10.47,partner,missing_feature,missing the reporting export we needed,3.6,0
+can_0111,acct_00354,2025-09-06,2026-06-30,starter,2,20.27,outbound,switched_tool,consolidated onto the suite we already pay for,2.0,0
+can_0112,acct_00057,2025-06-07,2025-10-03,starter,2,19.26,organic,too_expensive,,5.0,1
+can_0113,acct_00180,2025-05-11,2026-01-09,starter,2,17.23,paid_search,too_expensive,we could not get it into the daily routine,4.5,1
+can_0114,acct_00447,2025-07-01,2025-11-09,team,9,75.56,organic,too_expensive,,4.0,1
+can_0115,acct_00415,2025-10-21,2026-06-30,team,19,160.31,organic,switched_tool,consolidated onto the suite we already pay for,1.8,0
+can_0116,acct_00604,2025-07-05,2025-11-22,team,16,130.42,outbound,missing_feature,approval workflows were too rigid for us,4.5,0
+can_0117,acct_00544,2025-04-24,2026-01-14,business,64,513.68,partner,missing_feature,"no SSO, security would not sign off",3.4,0
+can_0118,acct_00617,2025-03-17,2025-10-18,starter,3,30.98,paid_search,missing_feature,missing the reporting export we needed,1.9,0
+can_0119,acct_00885,2025-08-26,2026-06-30,business,70,543.33,referral,missing_feature,"no API, we could not connect it to our stack",3.5,0
+can_0120,acct_00473,2025-05-21,2026-06-22,starter,1,10.05,outbound,too_expensive,finance pushed back on the per seat pricing,4.3,1
+can_0121,acct_00461,2025-02-16,2026-04-01,starter,4,33.76,partner,too_expensive,we never got the wider team to actually log in,4.0,0
+can_0122,acct_00352,2025-02-01,2025-12-23,business,47,351.47,organic,too_expensive,,4.9,1
+can_0123,acct_00290,2025-08-13,2026-06-30,business,37,293.8,outbound,too_expensive,the champion who bought it left and nobody picked it up,3.2,0
+can_0124,acct_00396,2025-06-21,2025-10-27,team,12,85.71,referral,too_expensive,,3.2,1
+can_0125,acct_00359,2025-03-18,2025-12-08,team,10,92.56,referral,switched_tool,,1.2,0
+can_0126,acct_00337,2025-02-13,2025-10-24,business,35,269.08,paid_search,too_expensive,,2.5,0
+can_0127,acct_00019,2025-09-27,2026-02-16,business,30,257.7,referral,too_expensive,finance pushed back on the per seat pricing,1.3,0
+can_0128,acct_00303,2025-09-06,2026-03-18,team,13,121.65,organic,too_expensive,"only two people ever used it, the rest stayed in spreadsheets",4.5,1
+can_0129,acct_00612,2025-01-20,2025-10-14,business,43,358.42,outbound,too_expensive,,1.7,0
+can_0130,acct_00455,2025-03-26,2026-02-08,starter,4,41.81,partner,too_expensive,we only ever used it for one workflow out of the four we planned,5.0,1
+can_0131,acct_00856,2025-05-03,2026-01-11,team,12,91.1,paid_search,too_expensive,,1.8,0
+can_0132,acct_00837,2025-05-25,2026-03-11,team,9,72.93,paid_search,too_expensive,renewal came round before we finished the rollout,2.3,0
+can_0133,acct_00529,2025-07-10,2026-06-30,business,46,358.41,organic,too_expensive,,3.9,0
+can_0134,acct_00837,2025-09-20,2026-03-09,team,14,113.74,outbound,too_expensive,we only ever used it for one workflow out of the four we planned,3.7,0
+can_0135,acct_00084,2025-07-11,2026-02-11,team,15,119.91,referral,other,,2.3,0
+can_0136,acct_00713,2025-06-21,2025-12-07,starter,5,53.25,paid_search,missing_feature,approval workflows were too rigid for us,2.8,0
+can_0137,acct_00114,2025-01-10,2025-08-24,business,21,176.09,referral,too_expensive,we could not get it into the daily routine,4.3,1
+can_0138,acct_00612,2025-08-23,2025-12-28,starter,2,18.87,partner,no_longer_needed,,3.1,0
+can_0139,acct_00192,2025-05-30,2026-04-09,starter,2,20.6,organic,missing_feature,approval workflows were too rigid for us,3.5,1
+can_0140,acct_00045,2025-09-17,2026-06-30,business,45,339.0,outbound,too_expensive,it sat unused for two months and then renewal hit,3.3,0
+can_0141,acct_00791,2025-06-26,2026-01-30,team,11,98.6,partner,too_expensive,,3.6,0
+can_0142,acct_00476,2025-06-23,2026-06-30,business,40,285.75,outbound,missing_feature,,1.9,0
+can_0143,acct_00043,2025-08-23,2025-12-14,business,43,342.26,referral,too_expensive,we only ever used it for one workflow out of the four we planned,4.4,1
+can_0144,acct_00883,2025-05-10,2025-08-31,team,1,8.36,organic,too_expensive,the champion who bought it left and nobody picked it up,3.1,0
+can_0145,acct_00509,2025-07-24,2026-06-09,business,36,258.45,outbound,too_expensive,renewal came round before we finished the rollout,3.8,0
+can_0146,acct_00185,2025-08-06,2025-12-19,team,16,143.93,partner,too_expensive,,2.9,0
+can_0147,acct_00360,2025-06-06,2026-04-25,team,11,95.13,outbound,missing_feature,approval workflows were too rigid for us,2.8,0
+can_0148,acct_00059,2025-08-11,2026-04-03,starter,2,20.0,organic,too_expensive,,1.4,0
+can_0149,acct_00801,2025-03-23,2025-07-11,business,31,252.66,outbound,too_expensive,,3.7,1
+can_0150,acct_00696,2025-07-05,2026-04-22,starter,3,30.26,outbound,too_expensive,renewal came round before we finished the rollout,3.9,0
+can_0151,acct_00256,2025-09-29,2026-06-30,team,7,59.03,organic,missing_feature,,3.6,0
+can_0152,acct_00220,2025-10-15,2026-03-19,starter,2,18.68,partner,too_expensive,it sat unused for two months and then renewal hit,3.4,1
+can_0153,acct_00456,2025-03-11,2025-07-21,team,6,45.05,organic,too_expensive,,0.3,0
+can_0154,acct_00872,2025-02-03,2026-02-14,business,80,628.11,paid_search,too_expensive,,2.9,0
+can_0155,acct_00812,2025-07-05,2026-06-25,business,34,229.3,paid_search,too_expensive,,3.2,1
+can_0156,acct_00627,2025-07-08,2026-06-07,starter,3,29.47,organic,too_expensive,,3.2,0
+can_0157,acct_00076,2025-09-27,2026-06-30,starter,1,10.3,paid_search,too_expensive,,5.0,0
+can_0158,acct_00656,2025-06-26,2025-12-03,team,9,78.26,partner,too_expensive,,2.6,0
+can_0159,acct_00331,2025-01-29,2025-07-06,starter,3,29.02,paid_search,no_longer_needed,renewal came round before we finished the rollout,2.2,0
+can_0160,acct_00282,2025-02-10,2025-09-21,team,16,123.45,paid_search,no_longer_needed,,2.4,0
+can_0161,acct_00863,2025-03-28,2026-04-30,business,34,254.35,partner,too_expensive,the champion who bought it left and nobody picked it up,4.5,0
+can_0162,acct_00427,2025-10-23,2026-06-10,starter,3,25.05,partner,no_longer_needed,,2.6,0
+can_0163,acct_00416,2025-06-04,2026-05-12,business,68,515.25,referral,too_expensive,,4.3,1
+can_0164,acct_00321,2025-09-05,2026-06-30,team,13,105.31,referral,switched_tool,,3.0,0
+can_0165,acct_00126,2025-07-09,2026-06-30,business,52,376.89,referral,too_expensive,it sat unused for two months and then renewal hit,3.3,0
+can_0166,acct_00164,2025-07-16,2026-06-30,team,12,92.77,referral,no_longer_needed,,3.3,0
+can_0167,acct_00093,2025-09-21,2026-06-30,business,38,255.02,outbound,too_expensive,we never got the wider team to actually log in,2.8,0
+can_0168,acct_00864,2025-01-25,2025-05-25,business,29,222.2,outbound,too_expensive,,4.2,1
+can_0169,acct_00053,2025-05-16,2026-02-22,team,4,32.32,partner,too_expensive,we could not get it into the daily routine,3.0,0
+can_0170,acct_00132,2025-09-16,2026-06-30,business,46,299.86,organic,missing_feature,"no SSO, security would not sign off",3.6,0
+can_0171,acct_00047,2025-07-07,2025-12-22,team,3,25.18,organic,too_expensive,budget was cut across the board this quarter,5.0,1
+can_0172,acct_00167,2025-03-18,2026-04-27,starter,2,19.45,outbound,too_expensive,the champion who bought it left and nobody picked it up,1.8,0
+can_0173,acct_00487,2025-09-18,2026-06-30,business,39,277.21,organic,too_expensive,,2.6,0
+can_0174,acct_00672,2025-06-07,2026-06-30,team,11,88.48,partner,no_longer_needed,,4.4,1
+can_0175,acct_00390,2025-09-26,2026-06-30,business,40,297.25,paid_search,switched_tool,,3.2,0
+can_0176,acct_00708,2025-04-08,2025-07-21,business,40,316.99,paid_search,too_expensive,we could not get it into the daily routine,4.6,0
+can_0177,acct_00539,2025-02-01,2025-07-16,team,6,49.08,outbound,missing_feature,approval workflows were too rigid for us,2.4,0
+can_0178,acct_00889,2025-10-07,2026-06-30,team,16,133.31,referral,other,,2.5,0
+can_0179,acct_00790,2025-06-02,2025-12-29,business,5,34.9,referral,missing_feature,,2.6,0
+can_0180,acct_00281,2025-06-28,2026-06-30,business,45,317.91,referral,missing_feature,,3.9,0
+can_0181,acct_00298,2025-07-22,2026-04-19,starter,1,10.81,organic,too_expensive,,2.9,0
+can_0182,acct_00278,2025-05-12,2026-04-17,team,13,120.89,partner,too_expensive,,4.0,1
+can_0183,acct_00232,2025-05-03,2025-12-08,business,39,312.59,paid_search,too_expensive,,4.4,1
+can_0184,acct_00162,2025-03-12,2025-06-17,starter,3,28.76,outbound,too_expensive,,3.9,0
+can_0185,acct_00788,2025-04-13,2025-12-11,business,66,490.01,organic,too_expensive,,3.6,1
+can_0186,acct_00038,2025-01-20,2025-07-23,business,24,191.41,outbound,too_expensive,,2.9,0
+can_0187,acct_00344,2025-05-29,2025-09-20,team,14,128.4,referral,missing_feature,"no SSO, security would not sign off",5.0,1
+can_0188,acct_00339,2025-03-10,2026-02-26,team,17,139.99,paid_search,too_expensive,"only two people ever used it, the rest stayed in spreadsheets",3.3,0
+can_0189,acct_00180,2025-06-22,2026-02-23,business,29,196.37,partner,missing_feature,,2.6,0
+can_0190,acct_00489,2025-02-14,2025-12-11,business,60,450.56,referral,switched_tool,consolidated onto the suite we already pay for,1.6,0
+can_0191,acct_00012,2025-05-17,2026-02-04,starter,4,38.05,referral,too_expensive,,4.1,1
+can_0192,acct_00721,2025-08-27,2026-05-06,business,33,259.09,referral,no_longer_needed,,3.4,0
+can_0193,acct_00766,2025-04-24,2025-11-17,business,63,441.97,partner,too_expensive,finance pushed back on the per seat pricing,4.7,0
+can_0194,acct_00611,2025-10-03,2026-04-27,team,7,57.24,organic,too_expensive,,4.0,0
+can_0195,acct_00518,2025-10-16,2026-03-17,business,19,124.05,paid_search,too_expensive,,4.4,1
+can_0196,acct_00501,2025-08-15,2026-01-16,business,31,256.37,organic,too_expensive,,3.3,0
+can_0197,acct_00689,2025-08-01,2026-06-25,business,35,232.74,referral,no_longer_needed,,2.9,0
+can_0198,acct_00555,2025-04-22,2026-05-18,business,50,318.03,organic,too_expensive,budget was cut across the board this quarter,4.2,1
+can_0199,acct_00662,2025-04-03,2025-09-14,starter,4,36.2,outbound,too_expensive,,3.3,0
+can_0200,acct_00896,2025-07-13,2026-04-26,team,16,146.64,partner,switched_tool,,2.8,0

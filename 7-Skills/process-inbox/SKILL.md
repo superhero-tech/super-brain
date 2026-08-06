@@ -5,97 +5,103 @@ description: Process new files from 2-Inbox/ and Clippings/ through the Karpathy
 
 # Process Inbox
 
-Przetwarza nowe pliki z `2-Inbox/` i `Clippings/` przez pętlę wiedzy Karpathy'ego.
+Runs new files from `2-Inbox/` and `Clippings/` through the Karpathy knowledge loop.
 
-## Kiedy używać
+## When to use
 
-- Dodałeś nowe pliki do Inbox lub Clippings (artykuły, transkrypty, notatki, klipy z webu)
-- Chcesz przetworzyć wszystko co nowe jednym poleceniem
+- You dropped new files into Inbox or Clippings (articles, transcripts, notes, web clippings)
+- You want to process everything new in one command
 
-## Jak wywołać
+## How to invoke
 
-- "Przetwórz Inbox"
-- "Zrób ingest"
-- "Co nowego w Inbox?"
+- "Process the inbox"
+- "Run an ingest"
+- "What is new in the inbox?"
 - `/process-inbox`
-- `/process-inbox nazwa-pliku.md`
+- `/process-inbox file-name.md`
 - `/process-inbox --all`
 
-## Jak to działa
+## How it works
 
-Dla każdego pliku w `2-Inbox/` lub `Clippings/`:
+For every file in `2-Inbox/` or `Clippings/`:
 
-### 1. Przeczytaj i przeanalizuj
+### 1. Read and analyse
 
-Przeczytaj pełną zawartość pliku. Wyciągnij:
-- Temat i kluczowe koncepty
-- Autora/źródło
-- Czy to jest artykuł, thread, tutorial, video, notatka?
+Read the full file. Pull out:
+- The topic and key concepts
+- The author/source
+- The type: article, thread, tutorial, video, note?
 
-### 2. Sprawdź duplikaty
+### 2. Check for duplicates
 
-Przeszukaj `4-Knowledge/` i `5-Raw/` - czy ten temat już jest przetworzony?
-- Jeśli tak → AKTUALIZUJ istniejącą stronę wiki (dodaj nowe insighty, dodaj źródło do YAML)
-- Jeśli nie → UTWÓRZ nową stronę wiki
+Search `4-Knowledge/` and `5-Raw/` - has this topic already been processed?
+- If yes -> UPDATE the existing wiki page (add new insights, add the source to the YAML)
+- If no -> CREATE a new wiki page
 
-### 3. Kompiluj do Knowledge
+### 3. Compile into Knowledge
 
-Utwórz lub zaktualizuj stronę wiki w `4-Knowledge/`:
+Create or update a wiki page in `4-Knowledge/`:
 
 ```markdown
 ---
-title: [Czytelny Tytuł]
-created: [RRRR-MM-DD]
+title: [Readable Title]
+created: [YYYY-MM-DD]
 sources:
-  - nazwa-pliku-1.md
-  - nazwa-pliku-2.md
+  - source-file-1.md
+  - source-file-2.md
 ---
 
-# [Czytelny Tytuł]
+# [Readable Title]
 
-[Skompilowana treść - synteza, nie kopiuj-wklej]
+[Compiled content - synthesis, not copy-paste]
 
-[Każde twierdzenie cytuje źródło: [source: nazwa-pliku.md]]
+[Every claim cites its source: [source: file-name.md]]
 
 ## Related
-- [[Inna Strona Wiki]]
+- [[Another Wiki Page]]
 ```
 
-**Zasady:**
-- Nazwa pliku czytelna: `Metody Discovery.md`, nie `metody-discovery.md`
-- Jedna strona na koncept, nie jedno źródło
-- Umieść w odpowiednim podfolderze `4-Knowledge/` (utwórz nowy jeśli żaden nie pasuje, minimum 2-3 strony na podfolder)
-- Dodaj `[[backlinki]]` do powiązanych stron
-- Cytuj źródło: `[source: nazwa-pliku.md]`
+**Rules:**
+- Readable file name: `Discovery Methods.md`, not `discovery-methods.md`
+- One page per concept, not one page per source
+- Put it in the right `4-Knowledge/` subfolder (create one if nothing fits, minimum three pages per subfolder)
+- Add `[[backlinks]]` to related pages
+- Cite the source: `[source: file-name.md]`
 
-### 4. Archiwizuj źródło
+### 4. Archive the source
 
-Przenieś przetworzony plik z `2-Inbox/` lub `Clippings/` do `5-Raw/`.
+Move the processed file from `2-Inbox/` or `Clippings/` to `5-Raw/`.
 
-### 5. Raportuj
+### 5. Update the index and log
+
+- Add or update the page's entry in `4-Knowledge/index.md`
+- Append an entry to `4-Knowledge/log.md`
+
+### 6. Report
 
 ```
-✓ Przetworzono: "nazwa-pliku.md"
-  → Wiki: 4-Knowledge/[Podfolder]/[Tytuł Strony].md (utworzono/zaktualizowano)
-  → Archiwum: 5-Raw/
+Processed: "file-name.md"
+  -> Wiki: 4-Knowledge/[Subfolder]/[Page Title].md (created/updated)
+  -> Archive: 5-Raw/
 ```
 
-## Tryb batch (--all)
+## Batch mode (--all)
 
-1. Wylistuj pliki w `2-Inbox/` i `Clippings/`
-2. Dla każdego: przeanalizuj, skompiluj, archiwizuj
-3. Pokaż podsumowanie:
+1. List the files in `2-Inbox/` and `Clippings/`
+2. For each: analyse, compile, archive
+3. Show a summary:
 
-| Plik | Wiki | Status |
+| File | Wiki | Status |
 |------|------|--------|
-| artykuł.md | 4-Knowledge/AI/Tytuł.md | utworzono |
-| thread.md | 4-Knowledge/Product/Tytuł.md | zaktualizowano |
+| article.md | 4-Knowledge/AI/Title.md | created |
+| thread.md | 4-Knowledge/Product/Title.md | updated |
 
-4. Raport: X przetworzonych, Y pominiętych, Z zflagowanych
+4. Report: X processed, Y skipped, Z flagged
 
-## Czerwone flagi - STOP
+## STOP - red flags
 
-- Modyfikujesz plik w `5-Raw/` (archiwum jest niezmienne)
-- Tworzysz stronę wiki z nazwą-slug zamiast czytelnego tytułu
-- Kopiujesz treść 1:1 zamiast kompilować
-- Przenosisz plik bez tworzenia/aktualizacji strony wiki
+- Modifying a file in `5-Raw/` (the archive is immutable)
+- Creating a wiki page with a slug name instead of a readable title
+- Copying content 1:1 instead of compiling it
+- Moving a file without creating or updating a wiki page
+- Finishing without updating `index.md` and `log.md`
