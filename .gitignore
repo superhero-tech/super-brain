@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+._*
+
+# Obsidian creates this per machine - plugin state, window layout, per-user hotkeys.
+# Ignored so that pulling an update to the vault never fights with your local setup.
+.obsidian/
+.trash/
+
+# Claude Code, per-user
+.claude/settings.local.json
+
+# Leftovers from the skills
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Editors
+.vscode/
+.idea/
+
+# Everything else is content and belongs in git. Your wiki, your sources, your
+# outputs and your projects are versioned on purpose - git history is the undo
+# button for anything the AI gets wrong.

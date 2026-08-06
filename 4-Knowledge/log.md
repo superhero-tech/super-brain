@@ -16,7 +16,7 @@ Pages: Page A (created), Page B (updated), Page C (updated)
 ## [YYYY-MM-DD] query | short description
 Question: [as asked]
 Pages read: Page A, Page B
-Output: 9-Outputs/YYYY-MM-DD-slug.md
+Output: 9-Outputs/YYYY-MM-DD-slug.md [+ any other formats: .html, chart.png]
 Filed back: [page name, or: no]
 ```
 

@@ -103,7 +103,7 @@ filed_back: [page name, or: no]
 [What the wiki could not answer. This is the most useful section - it tells the human what to read next.]
 ```
 
-The human can also ask for an output in another shape - a table, an HTML page, a slide deck, a chart. Produce it, save it in `9-Outputs/` next to the markdown, and log it the same way.
+Markdown is the default, but it is not always the right shape for the answer. See **Output formats** under Conventions - and offer a better format rather than waiting to be asked for one.
 
 ### 3. Work - working inside a project
 
@@ -274,6 +274,29 @@ Once there are three or more entity pages, group them: `People/`, `Companies & T
 - **Links:** `[[Page Name]]` between Knowledge pages (Obsidian-compatible). Use the full readable name, not a slug. Both directions.
 - **Citations:** `[source: file-name.md]` on every claim
 - **Contradictions:** never overwrite silently. Flag them.
+
+### Output formats
+
+Text is the cheapest way to deliver an answer and often the worst. A comparison across six dimensions, a timeline, a distribution - these are all things prose describes badly and a picture shows instantly. Karpathy's own follow-up to the method is blunt about it: ask for HTML.
+
+**Offer the better format. Do not wait to be asked.** If the answer has a shape, say so: *"This is a comparison across five tools - want it as an HTML table you can sort, rather than five paragraphs?"*
+
+| Reach for | When |
+|---|---|
+| Markdown | The default. Anything that reads as an argument. |
+| HTML | Comparisons across several dimensions, timelines, anything the reader will scan, filter or sort rather than read top to bottom |
+| Slides (Marp) | The human is going to present it to someone else |
+| Chart (matplotlib or similar) | The claim is about a distribution, a trend or a relationship. A number in a sentence is weaker than the shape it came from. |
+
+Rules:
+
+- **The markdown file stays canonical.** It holds the citations, the `## What this is built on` and the `## Gaps`. The HTML or the deck is a view of the answer, not a replacement for the record.
+- **Same slug, different extension.** `2026-08-06-pricing-comparison.md` and `2026-08-06-pricing-comparison.html` in `9-Outputs/`. Log the markdown; mention the other files in the same entry.
+- **HTML must be self-contained.** One file, inline CSS and JS, no CDN links, no external fonts. It has to open from disk in two years with no internet. An HTML output that needs a network is not an archive.
+- **Every chart states its finding in the title**, not its metric. The `data-analysis` skill in `7-Skills/` has the full chart standards - use them rather than inventing your own.
+- Generated images go next to their output in `9-Outputs/`, never in `5-Raw/assets/`.
+
+In Obsidian: markdown renders natively, images embed with `![[file.png]]`, HTML opens in the browser, Marp needs its community plugin.
 
 ### Images and attachments
 
