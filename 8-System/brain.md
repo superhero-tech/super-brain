@@ -4,6 +4,8 @@
 
 This is a product builder's second brain. Read `8-System/about.md` before you answer anything. Honour that person's communication style and goals - but never drop the Operating Principles below.
 
+`8-System/limits.md` says where this method breaks. Read it before you tell the human that the wiki is sure about something.
+
 <Operating_Principles>
 - Challenge assumptions and push past conventional thinking
 - Put customer obsession above process compliance
@@ -19,12 +21,12 @@ This is a product builder's second brain. Read `8-System/about.md` before you an
 
 | Folder | What lives here | Who writes |
 |---|---|---|
-| `1-Daily/` | Daily notes | Human |
+| `1-Daily/` | Daily notes. A source like any other, but never ingested unless the human asks - see Ingest. | Human |
 | `2-Inbox/` | New material waiting to be processed (clippings, files, transcripts) | Human |
 | `3-Projects/` | Active projects, one folder each. `index.md` is the project index - read it first. See `3-Projects/README.md`. | Human + AI |
 | `4-Knowledge/` | The compiled wiki - one page per concept. Two special files: `index.md` (table of contents, read first on Query and Ingest) and `log.md` (chronological history of everything you do to the wiki). | **AI owns this.** Writes, updates, links. |
-| `5-Raw/` | The source corpus. Every processed source, moved here from Inbox. Immutable - and complete enough to rebuild the whole wiki from. | AI moves files here, nobody edits them |
-| `6-Templates/` | Document templates (PRD, OST, RICE, roadmap...) | Human + AI |
+| `5-Raw/` | The source corpus. Every processed source, moved here from Inbox. Images live in `5-Raw/assets/`. Immutable - and complete enough to rebuild the whole wiki from. | AI moves files here, nobody edits them |
+| `6-Templates/` | Document templates. Read `6-Templates/README.md` before writing any document that has one. | Human + AI |
 | `7-Skills/` | Runnable agent skills in Anthropic Skills format | Human installs, AI runs |
 | `8-System/` | This file plus `about.md` (personal profile) | Rarely edited |
 | `9-Outputs/` | Answers, reports and analyses the AI produces on request. Every substantial Query lands here. | **AI owns this.** |
@@ -51,17 +53,22 @@ When the human says "process this", "run an ingest", "I dropped something in Inb
 
 1. Read the file in `2-Inbox/` end to end
 2. Read `4-Knowledge/index.md` so you know what already exists
-3. **List everything this source touches.** Not the topic - every concept and method (concept pages) and every person, company, tool and product (entity pages). Match each against the index. This list is the work; steps 4 and 5 just execute it.
-4. **Write the primary page.** Create or update the page for the source's main concept. One page = one concept, never one page per source.
-5. **Update every other page on the list.** For each existing page the source touches: add what this source adds, cite it, and link to the primary page. A substantial source moves five or more pages. Updating one page and stopping is the failure mode of this workflow - it produces a pile of summaries instead of a wiki.
-6. **Link in both directions.** A `[[link]]` from the new page to an old one is half a link. Add the return link on the old page too. One-directional links are how pages become orphans.
-7. Flag contradictions explicitly, never silently: `> CONTRADICTION: [old claim] vs [new claim] from [source]`
-8. Cite the source on every claim: `[source: file-name.md]`
-9. Update `4-Knowledge/index.md` - add new pages, refresh the descriptions of changed ones
-10. Append an `ingest` entry to `4-Knowledge/log.md`, listing **every** page you touched
-11. Move the processed file from `2-Inbox/` to `5-Raw/`
+3. **List everything this source touches.** Not the topic - every concept and method (concept pages) and every person, company, tool and product (entity pages). Match each against the index. This list is the work; the steps below just execute it.
+4. **Check in before you write anything.** Three or four lines: what the source actually argues, which pages you are about to touch, and anything in it that contradicts what the wiki already says. Then wait. This is the cheapest place in the whole system to catch a bad reading - once a wrong page exists, every answer built on it inherits the mistake and you will not notice for a month. See `8-System/limits.md`.
+5. **Write the primary page.** Create or update the page for the source's main concept. One page = one concept, never one page per source.
+6. **Update every other page on the list.** For each existing page the source touches: add what this source adds, cite it, and link to the primary page. A substantial source moves five or more pages. Updating one page and stopping is the failure mode of this workflow - it produces a pile of summaries instead of a wiki.
+7. **Link in both directions.** A `[[link]]` from the new page to an old one is half a link. Add the return link on the old page too. One-directional links are how pages become orphans.
+8. Flag contradictions explicitly, never silently: `> CONTRADICTION: [old claim] vs [new claim] from [source]`
+9. Cite the source on every claim: `[source: file-name.md]`
+10. Update `4-Knowledge/index.md` - add new pages, refresh the descriptions of changed ones
+11. Append an `ingest` entry to `4-Knowledge/log.md`, listing **every** page you touched
+12. Move the processed file from `2-Inbox/` to `5-Raw/`, and any images that came with it to `5-Raw/assets/`
 
 If the source genuinely touched only one page, say so and say why. Early on the honest answer is usually "the wiki is still too small" - that is fine, but it should never be silent.
+
+**The check-in in step 4 is not optional.** The only time you skip it is batch mode, and only because the human explicitly asked for batch mode knowing it runs unsupervised.
+
+**Daily notes are a source too.** When the human asks you to go through a week or a month of `1-Daily/`, read the range and sort what you find: anything general goes to Knowledge as an ingest, anything about a specific project goes to that project's log as an Update. Never ingest daily notes unasked - they are personal, unfinished, and full of things that were true for one afternoon.
 
 ### 2. Query - answer from the wiki
 
@@ -103,7 +110,7 @@ The human can also ask for an output in another shape - a table, an HTML page, a
 When the human works on a project:
 
 1. Read `3-Projects/index.md`, then the project's `brief.md`, `rules.md` and the top of `log.md`
-2. Use `4-Knowledge/` and `6-Templates/` where they help
+2. Use `4-Knowledge/` for what is already known. If the document you are about to write has a template in `6-Templates/`, read it and use it - do not invent a structure alongside one that exists.
 3. Save every output INSIDE the project folder, never at vault root and never in `9-Outputs/`
 4. When an insight is bigger than the project, offer to add it to Knowledge
 
@@ -114,7 +121,7 @@ When the human says "here is what happened", "update the project", "I have an up
 1. Read the project's `brief.md` and `log.md` for context
 2. Ask for what is missing: "What did you decide? What did you build? What did you learn?"
 3. Write structured notes into the right project subfolder:
-   - Decision (e.g. "picked feature X because Y") -> `decisions/`
+   - Decision (e.g. "picked feature X because Y") -> `decisions/`, using `6-Templates/decision-record.md`
    - Prototype (e.g. "built it in Lovable, link here") -> `prototypes/`
    - Learning or analysis (e.g. "this failed because Z") -> `analyses/`
 4. Append an entry to the project's `log.md` and refresh its row in `3-Projects/index.md`
@@ -267,6 +274,14 @@ Once there are three or more entity pages, group them: `People/`, `Companies & T
 - **Links:** `[[Page Name]]` between Knowledge pages (Obsidian-compatible). Use the full readable name, not a slug. Both directions.
 - **Citations:** `[source: file-name.md]` on every claim
 - **Contradictions:** never overwrite silently. Flag them.
+
+### Images and attachments
+
+- Images that arrived with a source live in `5-Raw/assets/`. Move them there together with the source, during ingest.
+- Embed with `![[file-name.png]]`. Obsidian resolves it from anywhere in the vault, so wiki pages can reference source images directly.
+- **Never rename or move an asset after ingest.** The pages referencing it will not follow, and you will not notice.
+- Images you generate - charts, diagrams - belong next to their output in `9-Outputs/`. `5-Raw/assets/` is source material only.
+- If the human uses the Obsidian Web Clipper, its "Download attachments" hotkey pulls a clipped page's images local so you can actually see them. Worth telling them once.
 
 ### The log
 

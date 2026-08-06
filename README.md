@@ -14,10 +14,10 @@ Raw sources go in, a linked wiki comes out, and every question you ask is answer
 | `2-Inbox/` | New material waiting to be processed |
 | `3-Projects/` | Active projects, one folder each. See [3-Projects/README.md](3-Projects/README.md) |
 | `4-Knowledge/` | The compiled wiki. The AI owns this. |
-| `5-Raw/` | Archive of processed sources. Immutable. |
+| `5-Raw/` | The source corpus, plus `assets/` for their images. Immutable. |
 | `6-Templates/` | Document templates |
-| `7-Skills/` | Runnable agent skills |
-| `8-System/` | Agent instructions and your personal profile |
+| `7-Skills/` | Runnable agent skills, linked into `.claude/skills/` so they work as slash commands |
+| `8-System/` | Agent instructions, your personal profile, and [where this method breaks](8-System/limits.md) |
 | `9-Outputs/` | Answers and reports the AI produces. Every substantial question lands here. |
 
 `CLAUDE.md` and `AGENTS.md` are the entry points agents read first. They point at `8-System/brain.md`, which holds the actual operating instructions.
@@ -25,6 +25,10 @@ Raw sources go in, a linked wiki comes out, and every question you ask is answer
 ## Requirements
 
 Any AI tool that can read and write local files - Claude Code, Claude Cowork, OpenCode, Cursor, Windsurf, Codex. Obsidian is recommended as the viewer but not required.
+
+## Before you trust it
+
+Read [8-System/limits.md](8-System/limits.md). The method works, and it fails in five specific ways - error compounding being the one that will actually bite you.
 
 ## Credits
 

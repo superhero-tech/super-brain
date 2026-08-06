@@ -91,7 +91,9 @@ Read CLAUDE.md and tell me what you see.
 
 If the AI comes back talking about `brain.md` and `about.md`, it works.
 
-5. **Run the setup skill:** type `/second-brain-setup` (if the skill is installed) or:
+5. **Run the setup skill:** type `/second-brain-setup`
+
+The skills in `7-Skills/` are linked into `.claude/skills/`, so Claude picks them up as slash commands with no extra setup. If that does not work, the ad-hoc method always does:
 
 ```
 Read 7-Skills/second-brain-setup/SKILL.md and run the workflow described in that file.
@@ -123,8 +125,10 @@ Read CLAUDE.md and tell me what you see.
 4. **Run the setup skill:**
 
 ```
-Run the second-brain-setup skill
+/second-brain-setup
 ```
+
+The skills in `7-Skills/` are linked into `.claude/skills/`, so Claude Code picks them up as slash commands. `/process-inbox`, `/youtube` and `/data-analysis` work the same way.
 
 ---
 
@@ -268,5 +272,6 @@ Read `3-Projects/README.md` first if you want to know how the index and the log 
 | The AI cannot see the files | Check that you opened the FOLDER, not a single file |
 | OpenCode: `/connect` does nothing | Make sure you have the latest version from https://opencode.ai/download |
 | Obsidian shows no folders | Choose "Open folder as vault", not "Create new vault" |
-| The skill does not work as a slash command | Use the ad-hoc method: "Read the SKILL.md and run the workflow" |
+| The skill does not work as a slash command | Use the ad-hoc method: "Read the SKILL.md and run the workflow". This is the normal path outside Claude Code. |
+| Windows: `.claude/skills/` looks like text files, not folders | Git did not create the symlinks. Run `git config core.symlinks true` and re-clone, or just copy `7-Skills/*` into `.claude/skills/` by hand. |
 | `about.md` is still empty after running the skill | The AI should have written the file. Check in Obsidian. If it is empty, run it again. |

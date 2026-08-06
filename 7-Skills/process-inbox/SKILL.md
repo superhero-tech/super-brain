@@ -49,6 +49,12 @@ An entity earns a page when it appears in two or more sources, or is central to 
 
 This list is the actual work. Steps 3 and 4 just execute it.
 
+### 2b. Check in before writing
+
+Show the human what you found, in three or four lines: what the source argues, which pages you are about to touch, and anything that contradicts what the wiki already says. Then wait.
+
+Skip this only in batch mode. A wrong page written now is a wrong answer in every query for the next month - this is the cheapest place to catch it.
+
 ### 3. Write the primary page
 
 Create or update the page for the primary concept:
@@ -127,7 +133,7 @@ sources:
 
 ### 5. Archive the source
 
-Move the processed file from `2-Inbox/` or `Clippings/` to `5-Raw/`.
+Move the processed file from `2-Inbox/` or `Clippings/` to `5-Raw/`, and any images that came with it to `5-Raw/assets/`. Never rename an asset after this - the pages referencing it will not follow.
 
 ### 6. Update the index and log
 
@@ -169,5 +175,6 @@ Batch mode runs unsupervised. Say so before you start - single-source ingest wit
 - Adding a `[[link]]` in one direction only
 - Creating an entity page for every name in the source, including the ones mentioned once
 - Writing the argument onto the entity page instead of the concept page it belongs to
+- Compiling without the check-in in step 2b, outside batch mode
 - Moving a file without creating or updating a wiki page
 - Finishing without updating `index.md` and `log.md`
