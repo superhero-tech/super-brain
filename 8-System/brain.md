@@ -51,7 +51,7 @@ When the human says "process this", "run an ingest", "I dropped something in Inb
 
 1. Read the file in `2-Inbox/` end to end
 2. Read `4-Knowledge/index.md` so you know what already exists
-3. **List everything this source touches.** Not the topic - every concept, method, tool, company, person and claim in it. Match each against the index. This list is the work; steps 4 and 5 just execute it.
+3. **List everything this source touches.** Not the topic - every concept and method (concept pages) and every person, company, tool and product (entity pages). Match each against the index. This list is the work; steps 4 and 5 just execute it.
 4. **Write the primary page.** Create or update the page for the source's main concept. One page = one concept, never one page per source.
 5. **Update every other page on the list.** For each existing page the source touches: add what this source adds, cite it, and link to the primary page. A substantial source moves five or more pages. Updating one page and stopping is the failure mode of this workflow - it produces a pile of summaries instead of a wiki.
 6. **Link in both directions.** A `[[link]]` from the new page to an old one is half a link. Add the return link on the old page too. One-directional links are how pages become orphans.
@@ -139,6 +139,8 @@ Skip it while the wiki is under ten pages - there is nothing to find yet. Say so
 | `WARN` | Pages marked `status: needs_update`, or with `last_updated` older than six months |
 | `WARN` | Pages with `source_count: 1` that assert more than one source can carry |
 | `INFO` | Concepts mentioned across several pages with no page of their own |
+| `INFO` | People, companies or tools named on three or more pages with no entity page |
+| `INFO` | Entity pages longer than the concept pages they point at - the argument is in the wrong place |
 | `INFO` | Connections worth making between existing pages |
 
 3. Write the report to `4-Knowledge/lint-[YYYY-MM-DD].md` using the template below
@@ -169,6 +171,7 @@ Checked [n] pages. Found [x] errors, [y] warnings, [z] notes.
 ## INFO
 
 - "[concept]" appears on 4 pages and has none of its own. Worth writing.
+- "[person or company]" is cited on 5 pages with no entity page. It has become a hub without one.
 
 ## Suggested next
 
@@ -189,12 +192,63 @@ Rank the suggestions. An unranked lint report gets read once and never again.
 - **Spaces, capitals and special characters are fine.** Obsidian handles them. Use `&` instead of `and` to keep titles short.
 - **Topic subfolders.** Once Knowledge grows past ~10 pages, group them by domain (e.g. `Discovery/`, `Strategy/`, `AI & Tools/`). Never create a subfolder for a single page - three pages minimum.
 
+### Two kinds of page
+
+Knowledge holds concept pages and entity pages. They do different jobs and mixing them up is what turns a wiki back into a pile of documents.
+
+| | Concept page | Entity page |
+|---|---|---|
+| What it is | An idea, framework, method, pattern | A person, company, tool or product |
+| Examples | `Continuous Discovery.md`, `Pricing Power.md` | `Teresa Torres.md`, `Linear.md`, `Stripe.md` |
+| What it holds | The reasoning. Claims, evidence, contradictions. | Who this is, what they argue or what it does, and links out |
+| How long | As long as the argument needs | Short. It is a hub, not an essay. |
+
+**The rule that makes this work: the argument lives on the concept page.** An entity page says who said what and points at where the reasoning is. If an entity page grows longer than the concept pages it links to, the argument got written in the wrong place - move it.
+
+**When to create an entity page.** When the entity shows up in two or more sources, or is central to one. A name mentioned once in passing is a citation, not a page. Creating a page per name is how you get fifty orphans.
+
+Entity page shape:
+
+```markdown
+---
+title: [Entity Name]
+type: entity
+entity_kind: person | company | tool | product
+created: [YYYY-MM-DD]
+last_updated: [YYYY-MM-DD]
+source_count: [n]
+status: draft | reviewed | needs_update
+sources:
+  - source-file.md
+---
+
+# [Entity Name]
+
+[One paragraph. What this is and why it earns a page in this wiki.]
+
+## What they argue / What it does
+[Positions and claims for a person or company. Capabilities and limits for a tool.
+One line each, every one cited. If a claim needs a paragraph, it belongs on a concept page.]
+
+## Where it shows up
+- [[Concept Page]] - what this entity contributed there
+- [[Another Concept]] - and there
+
+## Track record
+[Only if you have it: what actually happened, numbers, outcomes. Delete the section if empty.]
+
+## Open questions
+```
+
+Once there are three or more entity pages, group them: `People/`, `Companies & Tools/`. Same rule as any other subfolder.
+
 ### Page structure
 
 - **YAML header** on every Knowledge page:
   ```
   ---
   title: [Topic]
+  type: concept | entity
   created: [YYYY-MM-DD]
   last_updated: [YYYY-MM-DD]
   source_count: [how many sources this page is built on]
@@ -203,6 +257,7 @@ Rank the suggestions. An unranked lint report gets read once and never again.
     - source-file.md
   ---
   ```
+  Entity pages add `entity_kind` - see above.
   `last_updated` and `source_count` change on every edit. `status` means:
   - `draft` - you wrote it, nobody has checked it
   - `reviewed` - the human read it and it holds

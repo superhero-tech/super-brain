@@ -52,9 +52,11 @@ source: [YouTube URL]
 topics:
   - topic-1
   - topic-2
-type: video
+source_type: video
 ---
 ```
+
+This is the frontmatter of the **source note** that lands in `2-Inbox/` and later `5-Raw/`. It is not wiki-page frontmatter - wiki pages use `type: concept | entity`. Do not copy this block onto the wiki page.
 
 **For tutorials:**
 ```markdown
@@ -104,13 +106,14 @@ type: video
 
 **Step A:** Save the note to `2-Inbox/`
 
-**Step B:** Map the video against `4-Knowledge/index.md`. List every concept, tool, company and claim it touches, and mark each as primary / existing / new.
+**Step B:** Map the video against `4-Knowledge/index.md`. List everything it touches, marked by kind (concept or entity) and by state (primary / existing / new). Videos are entity-heavy - the speaker, their company, and every tool they name are candidates. An entity earns a page at two or more sources, or if it is central to this one.
 
 **Step C:** Write the primary page in the right `4-Knowledge/` subfolder - readable file name, `[source: ...]` citations, and this frontmatter:
 
 ```yaml
 ---
 title: [Readable Title]
+type: concept
 created: [YYYY-MM-DD]
 last_updated: [YYYY-MM-DD]
 source_count: [n]
@@ -120,7 +123,7 @@ sources:
 ---
 ```
 
-**Step D:** Update every existing page the video touches - add what it adds, cite it, link both ways. A 40-minute talk usually moves several pages. Updating one and stopping defeats the point.
+**Step D:** Update every existing page the video touches, and write the entity pages that earned one (`type: entity`, `entity_kind`, short, links out to where the reasoning lives). Add what the video adds, cite it, link both ways. A 40-minute talk usually moves several pages. Updating one and stopping defeats the point.
 
 **Step E:** Move the note from `2-Inbox/` to `5-Raw/`
 

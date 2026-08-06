@@ -34,11 +34,18 @@ Read the full file. Pull out:
 
 ### 2. Map it against the wiki
 
-Read `4-Knowledge/index.md`. Then list **everything** this source touches - every concept, method, tool, company, person and claim in it - and mark each one as:
+Read `4-Knowledge/index.md`. Then list **everything** this source touches and mark each item twice.
 
+By kind:
+- **concept** - an idea, framework, method or pattern
+- **entity** - a person, company, tool or product
+
+By state:
 - **primary** - the source's main concept, gets the new or heavily updated page
 - **existing** - already has a page, needs an update from this source
-- **new** - worth a page of its own later, no page yet
+- **new** - worth a page of its own, no page yet
+
+An entity earns a page when it appears in two or more sources, or is central to this one. A name mentioned once in passing gets a citation, not a page.
 
 This list is the actual work. Steps 3 and 4 just execute it.
 
@@ -49,6 +56,7 @@ Create or update the page for the primary concept:
 ```markdown
 ---
 title: [Readable Title]
+type: concept
 created: [YYYY-MM-DD]
 last_updated: [YYYY-MM-DD]
 source_count: [how many sources this page is built on]
@@ -85,6 +93,38 @@ For each page marked **existing** in step 2:
 
 A substantial source moves five or more pages. **Touching one page and stopping is the failure mode of this skill** - it turns the wiki into a pile of summaries. If a source really did touch only one page, say so and say why.
 
+### 4b. Write or update the entity pages
+
+For every person, company, tool or product marked **entity** in step 2 that earns a page:
+
+```markdown
+---
+title: [Entity Name]
+type: entity
+entity_kind: person | company | tool | product
+created: [YYYY-MM-DD]
+last_updated: [YYYY-MM-DD]
+source_count: [n]
+status: draft
+sources:
+  - source-file.md
+---
+
+# [Entity Name]
+
+[One paragraph. What this is and why it earns a page here.]
+
+## What they argue / What it does
+- [One line per claim or capability, each cited]
+
+## Where it shows up
+- [[Concept Page]] - what this entity contributed there
+
+## Open questions
+```
+
+**Keep entity pages short.** The reasoning belongs on the concept page; the entity page says who said what and links to it. An entity page longer than the concept pages it points at means the argument landed in the wrong file.
+
 ### 5. Archive the source
 
 Move the processed file from `2-Inbox/` or `Clippings/` to `5-Raw/`.
@@ -100,7 +140,8 @@ Move the processed file from `2-Inbox/` or `Clippings/` to `5-Raw/`.
 Processed: "file-name.md"
   -> Primary: 4-Knowledge/[Subfolder]/[Page Title].md (created)
   -> Updated: [Page B], [Page C], [Page D]
-  -> New pages worth writing: [concept X], [concept Y]
+  -> Entities: [Name] (created), [Name] (updated)
+  -> Worth writing later: [concept X], [entity Y]
   -> Archive: 5-Raw/
 ```
 
@@ -126,5 +167,7 @@ Batch mode runs unsupervised. Say so before you start - single-source ingest wit
 - Copying content 1:1 instead of compiling it
 - Writing the primary page and skipping step 4
 - Adding a `[[link]]` in one direction only
+- Creating an entity page for every name in the source, including the ones mentioned once
+- Writing the argument onto the entity page instead of the concept page it belongs to
 - Moving a file without creating or updating a wiki page
 - Finishing without updating `index.md` and `log.md`
