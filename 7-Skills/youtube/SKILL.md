@@ -104,15 +104,27 @@ type: video
 
 **Step A:** Save the note to `2-Inbox/`
 
-**Step B:** Compile into Knowledge
-1. Check whether a wiki page on this topic exists in `4-Knowledge/`
-2. If yes -> UPDATE it (add insights, add the source to the YAML)
-3. If no -> CREATE a new page in the right `4-Knowledge/` subfolder
-4. Readable file name, `[[backlinks]]`, `[source: ...]` citations
+**Step B:** Map the video against `4-Knowledge/index.md`. List every concept, tool, company and claim it touches, and mark each as primary / existing / new.
 
-**Step C:** Move the note from `2-Inbox/` to `5-Raw/`
+**Step C:** Write the primary page in the right `4-Knowledge/` subfolder - readable file name, `[source: ...]` citations, and this frontmatter:
 
-**Step D:** Update `4-Knowledge/index.md` and append to `4-Knowledge/log.md`
+```yaml
+---
+title: [Readable Title]
+created: [YYYY-MM-DD]
+last_updated: [YYYY-MM-DD]
+source_count: [n]
+status: draft
+sources:
+  - note-file.md
+---
+```
+
+**Step D:** Update every existing page the video touches - add what it adds, cite it, link both ways. A 40-minute talk usually moves several pages. Updating one and stopping defeats the point.
+
+**Step E:** Move the note from `2-Inbox/` to `5-Raw/`
+
+**Step F:** Update `4-Knowledge/index.md` and append an `ingest` entry to `4-Knowledge/log.md`, listing every page you touched
 
 ## Self-check
 
@@ -121,6 +133,7 @@ type: video
 - Did I capture the concrete numbers and metrics?
 - Did I catch the Q&A section?
 - Did I avoid AI filler words (delve, tapestry, pivotal, foster)?
+- Did I update the other pages this video touches, or just write one and stop?
 
 ## Cleanup
 

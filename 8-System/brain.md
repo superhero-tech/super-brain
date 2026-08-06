@@ -22,11 +22,12 @@ This is a product builder's second brain. Read `8-System/about.md` before you an
 | `1-Daily/` | Daily notes | Human |
 | `2-Inbox/` | New material waiting to be processed (clippings, files, transcripts) | Human |
 | `3-Projects/` | Active projects, one folder each. `index.md` is the project index - read it first. See `3-Projects/README.md`. | Human + AI |
-| `4-Knowledge/` | The compiled wiki - one page per concept. Two special files: `index.md` (table of contents, read first on Query and Ingest) and `log.md` (chronological history, append after every Ingest). | **AI owns this.** Writes, updates, links. |
-| `5-Raw/` | Archive of processed sources, moved here from Inbox after ingest. Immutable. | AI moves files here |
+| `4-Knowledge/` | The compiled wiki - one page per concept. Two special files: `index.md` (table of contents, read first on Query and Ingest) and `log.md` (chronological history of everything you do to the wiki). | **AI owns this.** Writes, updates, links. |
+| `5-Raw/` | The source corpus. Every processed source, moved here from Inbox. Immutable - and complete enough to rebuild the whole wiki from. | AI moves files here, nobody edits them |
 | `6-Templates/` | Document templates (PRD, OST, RICE, roadmap...) | Human + AI |
 | `7-Skills/` | Runnable agent skills in Anthropic Skills format | Human installs, AI runs |
 | `8-System/` | This file plus `about.md` (personal profile) | Rarely edited |
+| `9-Outputs/` | Answers, reports and analyses the AI produces on request. Every substantial Query lands here. | **AI owns this.** |
 
 ---
 
@@ -44,19 +45,23 @@ When the human brings something new, it is not always obvious where it goes:
 
 Never guess. Better to ask once than to file it in the wrong place.
 
-### 1. Ingest - new source from Inbox -> wiki page in Knowledge
+### 1. Ingest - new source from Inbox -> the wiki
 
 When the human says "process this", "run an ingest", "I dropped something in Inbox":
 
-1. Read the file in `2-Inbox/`
-2. Read `4-Knowledge/index.md` so you know which wiki pages already exist
-3. Create or update a topic page in `4-Knowledge/` (one page = one concept, not one page per source)
-4. Add `[[backlinks]]` to related pages
-5. Flag contradictions explicitly: `> CONTRADICTION: [old claim] vs [new claim] from [source]`
-6. Cite the source on every claim: `[source: file-name.md]`
-7. Update `4-Knowledge/index.md` - add the new page or update the description of an existing one
-8. Append an entry to `4-Knowledge/log.md` (date, source, what was created or updated)
-9. Move the processed file from `2-Inbox/` to `5-Raw/`
+1. Read the file in `2-Inbox/` end to end
+2. Read `4-Knowledge/index.md` so you know what already exists
+3. **List everything this source touches.** Not the topic - every concept, method, tool, company, person and claim in it. Match each against the index. This list is the work; steps 4 and 5 just execute it.
+4. **Write the primary page.** Create or update the page for the source's main concept. One page = one concept, never one page per source.
+5. **Update every other page on the list.** For each existing page the source touches: add what this source adds, cite it, and link to the primary page. A substantial source moves five or more pages. Updating one page and stopping is the failure mode of this workflow - it produces a pile of summaries instead of a wiki.
+6. **Link in both directions.** A `[[link]]` from the new page to an old one is half a link. Add the return link on the old page too. One-directional links are how pages become orphans.
+7. Flag contradictions explicitly, never silently: `> CONTRADICTION: [old claim] vs [new claim] from [source]`
+8. Cite the source on every claim: `[source: file-name.md]`
+9. Update `4-Knowledge/index.md` - add new pages, refresh the descriptions of changed ones
+10. Append an `ingest` entry to `4-Knowledge/log.md`, listing **every** page you touched
+11. Move the processed file from `2-Inbox/` to `5-Raw/`
+
+If the source genuinely touched only one page, say so and say why. Early on the honest answer is usually "the wiki is still too small" - that is fine, but it should never be silent.
 
 ### 2. Query - answer from the wiki
 
@@ -65,7 +70,33 @@ When the human asks a question:
 1. Read `4-Knowledge/index.md` first to find the relevant pages
 2. Read those pages in `4-Knowledge/`
 3. Answer with `[source: page-name.md]` citations
-4. If the answer surfaces a new insight, offer to file it back into Knowledge
+4. **Save the answer** to `9-Outputs/[YYYY-MM-DD]-[short-slug].md` using the format below. Skip this only for a one-line lookup - and say that you skipped it.
+5. Append a `query` entry to `4-Knowledge/log.md`
+6. **Offer to file it back.** If the answer contains synthesis that is not on any page yet - a comparison, a connection, a conclusion - offer to write it into `4-Knowledge/` as a new page or a section on an existing one. This is the step that makes asking questions improve the wiki instead of just spending it.
+
+Output file format:
+
+```markdown
+---
+question: [the question, as asked]
+date: [YYYY-MM-DD]
+pages: [wiki pages used]
+filed_back: [page name, or: no]
+---
+
+# [Question as a title]
+
+[The answer, with [source: page-name.md] citations]
+
+## What this is built on
+- [[Page A]] - what it contributed
+- [[Page B]] - what it contributed
+
+## Gaps
+[What the wiki could not answer. This is the most useful section - it tells the human what to read next.]
+```
+
+The human can also ask for an output in another shape - a table, an HTML page, a slide deck, a chart. Produce it, save it in `9-Outputs/` next to the markdown, and log it the same way.
 
 ### 3. Work - working inside a project
 
@@ -73,7 +104,7 @@ When the human works on a project:
 
 1. Read `3-Projects/index.md`, then the project's `brief.md`, `rules.md` and the top of `log.md`
 2. Use `4-Knowledge/` and `6-Templates/` where they help
-3. Save every output INSIDE the project folder, never at vault root
+3. Save every output INSIDE the project folder, never at vault root and never in `9-Outputs/`
 4. When an insight is bigger than the project, offer to add it to Knowledge
 
 ### 4. Update - recording what happened in a project
@@ -92,16 +123,61 @@ When the human says "here is what happened", "update the project", "I have an up
 
 ### 5. Lint - wiki health check
 
-When the human says "check the wiki", "run a lint", "health check":
+Run this monthly, or when the human says "check the wiki", "run a lint", "health check".
+
+Skip it while the wiki is under ten pages - there is nothing to find yet. Say so rather than producing an empty report.
 
 1. Read `4-Knowledge/index.md` and every wiki page
-2. Find contradictions between pages
-3. Find claims with no `[source: ...]` citation
-4. Find orphan pages (no `[[backlinks]]` pointing at them)
-5. Find concepts mentioned in the text but with no page of their own
-6. Suggest new connections between existing pages
-7. Write the report to `4-Knowledge/lint-[YYYY-MM-DD].md`
-8. Append an entry to `4-Knowledge/log.md`
+2. Check for these, in this order:
+
+| Severity | What to look for |
+|---|---|
+| `ERROR` | Two pages that contradict each other |
+| `ERROR` | Claims with no `[source: ...]` citation |
+| `ERROR` | Index entries pointing at pages that do not exist, or pages missing from the index |
+| `WARN` | Orphan pages - nothing links to them |
+| `WARN` | Pages marked `status: needs_update`, or with `last_updated` older than six months |
+| `WARN` | Pages with `source_count: 1` that assert more than one source can carry |
+| `INFO` | Concepts mentioned across several pages with no page of their own |
+| `INFO` | Connections worth making between existing pages |
+
+3. Write the report to `4-Knowledge/lint-[YYYY-MM-DD].md` using the template below
+4. Append a `lint` entry to `4-Knowledge/log.md`
+5. **Fix nothing on your own.** Lint reports, the human decides. If they say go ahead, the fixes are an `update` and get logged as one.
+
+Report template:
+
+```markdown
+---
+title: Lint report
+created: [YYYY-MM-DD]
+pages_checked: [n]
+---
+
+# Lint report - [YYYY-MM-DD]
+
+Checked [n] pages. Found [x] errors, [y] warnings, [z] notes.
+
+## ERROR
+
+- **[[Page Name]]** - contradicts [[Other Page]] on [claim]. `[source-a.md]` says X, `[source-b.md]` says Y. Neither is flagged.
+
+## WARN
+
+- **[[Page Name]]** - orphan, nothing links here. Closest candidates: [[A]], [[B]]
+
+## INFO
+
+- "[concept]" appears on 4 pages and has none of its own. Worth writing.
+
+## Suggested next
+
+1. [The single most valuable fix]
+2. [Then this]
+3. [Then this]
+```
+
+Rank the suggestions. An unranked lint report gets read once and never again.
 
 ---
 
@@ -120,12 +196,28 @@ When the human says "check the wiki", "run a lint", "health check":
   ---
   title: [Topic]
   created: [YYYY-MM-DD]
-  sources: [list of source files]
+  last_updated: [YYYY-MM-DD]
+  source_count: [how many sources this page is built on]
+  status: draft | reviewed | needs_update
+  sources:
+    - source-file.md
   ---
   ```
-- **Links:** `[[Page Name]]` between Knowledge pages (Obsidian-compatible). Use the full readable name, not a slug.
+  `last_updated` and `source_count` change on every edit. `status` means:
+  - `draft` - you wrote it, nobody has checked it
+  - `reviewed` - the human read it and it holds
+  - `needs_update` - something contradicts it, or a newer source supersedes it
+
+  These three fields exist so Lint has something to sort on. A page with no `last_updated` is invisible to the health check.
+- **Links:** `[[Page Name]]` between Knowledge pages (Obsidian-compatible). Use the full readable name, not a slug. Both directions.
 - **Citations:** `[source: file-name.md]` on every claim
 - **Contradictions:** never overwrite silently. Flag them.
+
+### The log
+
+`4-Knowledge/log.md` records four actions: `ingest`, `query`, `lint`, `update`. `update` means the wiki changed outside an ingest - an output filed back, or a lint fix applied. Never edit an old entry; append.
+
+Formats are in `4-Knowledge/log.md` itself.
 
 ### Language
 
