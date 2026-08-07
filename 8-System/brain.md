@@ -89,17 +89,11 @@ When the human works on a project:
 
 ### 4. Update - recording what happened in a project
 
-When the human says "here is what happened", "update the project", "I have an update":
+When the human says "here is what happened", "update the project", "I have an update".
 
-1. Read the project's `brief.md` and `log.md` for context
-2. Ask for what is missing: "What did you decide? What did you build? What did you learn?"
-3. Write structured notes into the right project subfolder:
-   - Decision (e.g. "picked feature X because Y") -> `decisions/`, using `6-Templates/decision-record.md`
-   - Prototype (e.g. "built it in Lovable, link here") -> `prototypes/`
-   - Learning or analysis (e.g. "this failed because Z") -> `analyses/`
-4. Append an entry to the project's `log.md` and refresh its row in `3-Projects/index.md`
-5. If the scope changed, offer to update `brief.md`
-6. **Check whether this is bigger than the project.** If the insight generalises (e.g. "marketplaces behave differently than I assumed"), offer to add it to Knowledge as a wiki page
+**Run the `project-update` skill.** It reads the brief, the rules and the top of the log, asks for the gaps, writes the artefact into the right project subfolder, appends a log entry, refreshes the row in `3-Projects/index.md`, and offers to promote anything that outgrew the project into Knowledge.
+
+Project work stays inside the project folder. The index and the log are what let the next session start from the truth rather than from the brief.
 
 ### 5. Lint - wiki health check
 
