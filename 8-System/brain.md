@@ -72,38 +72,11 @@ If the source genuinely touched only one page, say so and say why. Early on the 
 
 ### 2. Query - answer from the wiki
 
-When the human asks a question:
+When the human asks a question the vault should be able to answer.
 
-1. Read `4-Knowledge/index.md` first to find the relevant pages
-2. Read those pages in `4-Knowledge/`
-3. Answer with `[source: page-name.md]` citations
-4. **Save the answer** to `9-Outputs/[YYYY-MM-DD]-[short-slug].md` using the format below. Skip this only for a one-line lookup - and say that you skipped it.
-5. Append a `query` entry to `4-Knowledge/log.md`
-6. **Offer to file it back.** If the answer contains synthesis that is not on any page yet - a comparison, a connection, a conclusion - offer to write it into `4-Knowledge/` as a new page or a section on an existing one. This is the step that makes asking questions improve the wiki instead of just spending it.
+**Run the `query` skill.** It finds the pages through `4-Knowledge/index.md`, answers with `[source: ...]` citations, saves the answer to `9-Outputs/`, logs it, and offers to file new synthesis back into the wiki.
 
-Output file format:
-
-```markdown
----
-question: [the question, as asked]
-date: [YYYY-MM-DD]
-pages: [wiki pages used]
-filed_back: [page name, or: no]
----
-
-# [Question as a title]
-
-[The answer, with [source: page-name.md] citations]
-
-## What this is built on
-- [[Page A]] - what it contributed
-- [[Page B]] - what it contributed
-
-## Gaps
-[What the wiki could not answer. This is the most useful section - it tells the human what to read next.]
-```
-
-Markdown is the default, but it is not always the right shape for the answer. See **Output formats** under Conventions - and offer a better format rather than waiting to be asked for one.
+Answers are kept on purpose. A question asked once should make the next one cheaper. What the wiki could not answer is worth as much as what it could, so the output file always names its gaps.
 
 ### 3. Work - working inside a project
 
