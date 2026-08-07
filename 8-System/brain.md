@@ -103,64 +103,11 @@ When the human says "here is what happened", "update the project", "I have an up
 
 ### 5. Lint - wiki health check
 
-Run this monthly, or when the human says "check the wiki", "run a lint", "health check".
+Monthly, or when the human asks for a health check.
 
-Skip it while the wiki is under ten pages - there is nothing to find yet. Say so rather than producing an empty report.
+**Run the `lint` skill.** It reads every page, classifies what it finds as `ERROR`, `WARN` or `INFO`, writes a ranked report to `4-Knowledge/lint-[YYYY-MM-DD].md` and logs it.
 
-1. Read `4-Knowledge/index.md` and every wiki page
-2. Check for these, in this order:
-
-| Severity | What to look for |
-|---|---|
-| `ERROR` | Two pages that contradict each other |
-| `ERROR` | Claims with no `[source: ...]` citation |
-| `ERROR` | Index entries pointing at pages that do not exist, or pages missing from the index |
-| `WARN` | Orphan pages - nothing links to them |
-| `WARN` | Pages marked `status: needs_update`, or with `last_updated` older than six months |
-| `WARN` | Pages with `source_count: 1` that assert more than one source can carry |
-| `INFO` | Concepts mentioned across several pages with no page of their own |
-| `INFO` | People, companies or tools named on three or more pages with no entity page |
-| `INFO` | Entity pages longer than the concept pages they point at - the argument is in the wrong place |
-| `INFO` | Connections worth making between existing pages |
-
-3. Write the report to `4-Knowledge/lint-[YYYY-MM-DD].md` using the template below
-4. Append a `lint` entry to `4-Knowledge/log.md`
-5. **Fix nothing on your own.** Lint reports, the human decides. If they say go ahead, the fixes are an `update` and get logged as one.
-
-Report template:
-
-```markdown
----
-title: Lint report
-created: [YYYY-MM-DD]
-pages_checked: [n]
----
-
-# Lint report - [YYYY-MM-DD]
-
-Checked [n] pages. Found [x] errors, [y] warnings, [z] notes.
-
-## ERROR
-
-- **[[Page Name]]** - contradicts [[Other Page]] on [claim]. `[source-a.md]` says X, `[source-b.md]` says Y. Neither is flagged.
-
-## WARN
-
-- **[[Page Name]]** - orphan, nothing links here. Closest candidates: [[A]], [[B]]
-
-## INFO
-
-- "[concept]" appears on 4 pages and has none of its own. Worth writing.
-- "[person or company]" is cited on 5 pages with no entity page. It has become a hub without one.
-
-## Suggested next
-
-1. [The single most valuable fix]
-2. [Then this]
-3. [Then this]
-```
-
-Rank the suggestions. An unranked lint report gets read once and never again.
+Lint reports, it does not repair. Pages change after the human agrees, and those fixes are logged as an `update`. A clean report means the wiki is tidy, not that it is correct - see `8-System/limits.md`.
 
 ---
 
