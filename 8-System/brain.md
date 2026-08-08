@@ -49,26 +49,13 @@ Never guess. Better to ask once than to file it in the wrong place.
 
 ### 1. Ingest - new source from Inbox -> the wiki
 
-When the human says "process this", "run an ingest", "I dropped something in Inbox":
+When the human says "process this", "run an ingest", "I dropped something in Inbox".
 
-1. Read the file in `2-Inbox/` end to end
-2. Read `4-Knowledge/index.md` so you know what already exists
-3. **List everything this source touches.** Not the topic - every concept and method (concept pages) and every person, company, tool and product (entity pages). Match each against the index. This list is the work; the steps below just execute it.
-4. **Check in before you write anything.** Three or four lines: what the source actually argues, which pages you are about to touch, and anything in it that contradicts what the wiki already says. Then wait. This is the cheapest place in the whole system to catch a bad reading - once a wrong page exists, every answer built on it inherits the mistake and you will not notice for a month. See `8-System/limits.md`.
-5. **Write the primary page.** Create or update the page for the source's main concept. One page = one concept, never one page per source.
-6. **Update every other page on the list.** For each existing page the source touches: add what this source adds, cite it, and link to the primary page. A substantial source moves five or more pages. Updating one page and stopping is the failure mode of this workflow - it produces a pile of summaries instead of a wiki.
-7. **Link in both directions.** A `[[link]]` from the new page to an old one is half a link. Add the return link on the old page too. One-directional links are how pages become orphans.
-8. Flag contradictions explicitly, never silently: `> CONTRADICTION: [old claim] vs [new claim] from [source]`
-9. Cite the source on every claim: `[source: file-name.md]`
-10. Update `4-Knowledge/index.md` - add new pages, refresh the descriptions of changed ones
-11. Append an `ingest` entry to `4-Knowledge/log.md`, listing **every** page you touched
-12. Move the processed file from `2-Inbox/` to `5-Raw/`, and any images that came with it to `5-Raw/assets/`
+**Run the `ingest` skill.** It maps the source against `4-Knowledge/index.md`, checks its reading with the human before writing, then writes the primary page and updates every other page the source touches, with links in both directions. It finishes by updating the index and log and archiving the source to `5-Raw/`.
 
-If the source genuinely touched only one page, say so and say why. Early on the honest answer is usually "the wiki is still too small" - that is fine, but it should never be silent.
+One source moves many pages. A source that produced a single page produced a summary, not wiki - and the skill has to say why.
 
-**The check-in in step 4 is not optional.** The only time you skip it is batch mode, and only because the human explicitly asked for batch mode knowing it runs unsupervised.
-
-**Daily notes are a source too.** When the human asks you to go through a week or a month of `1-Daily/`, read the range and sort what you find: anything general goes to Knowledge as an ingest, anything about a specific project goes to that project's log as an Update. Never ingest daily notes unasked - they are personal, unfinished, and full of things that were true for one afternoon.
+`1-Daily/` is a source too, but it is never ingested unless the human asks.
 
 ### 2. Query - answer from the wiki
 
@@ -128,40 +115,9 @@ Knowledge holds concept pages and entity pages. They do different jobs and mixin
 
 **When to create an entity page.** When the entity shows up in two or more sources, or is central to one. A name mentioned once in passing is a citation, not a page. Creating a page per name is how you get fifty orphans.
 
-Entity page shape:
-
-```markdown
----
-title: [Entity Name]
-type: entity
-entity_kind: person | company | tool | product
-created: [YYYY-MM-DD]
-last_updated: [YYYY-MM-DD]
-source_count: [n]
-status: draft | reviewed | needs_update
-sources:
-  - source-file.md
----
-
-# [Entity Name]
-
-[One paragraph. What this is and why it earns a page in this wiki.]
-
-## What they argue / What it does
-[Positions and claims for a person or company. Capabilities and limits for a tool.
-One line each, every one cited. If a claim needs a paragraph, it belongs on a concept page.]
-
-## Where it shows up
-- [[Concept Page]] - what this entity contributed there
-- [[Another Concept]] - and there
-
-## Track record
-[Only if you have it: what actually happened, numbers, outcomes. Delete the section if empty.]
-
-## Open questions
-```
-
 Once there are three or more entity pages, group them: `People/`, `Companies & Tools/`. Same rule as any other subfolder.
+
+The markdown skeleton for both kinds is in the `ingest` skill, which is what writes them.
 
 ### Page structure
 

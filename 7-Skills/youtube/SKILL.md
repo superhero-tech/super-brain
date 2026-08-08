@@ -1,6 +1,6 @@
 ---
 name: youtube
-description: Create a video summary note from a YouTube URL, then compile into 4-Knowledge/ wiki page via Karpathy method
+description: Captures a YouTube video as a source note and a wiki page. Use when the human drops a video URL, wants a talk or tutorial turned into notes, or asks what a specific video said about a topic.
 ---
 
 # YouTube Video Summary
@@ -11,6 +11,17 @@ Turns a YouTube video into a structured note, then compiles that note into a wik
 
 - You want a video turned into a clean note with metadata and key ideas
 - For tutorials the output is a step-by-step guide, not a summary
+
+## Requirements
+
+This skill pulls metadata and subtitles with `yt-dlp`. Install it once:
+
+```bash
+brew install yt-dlp     # macOS
+pip install yt-dlp      # everywhere else
+```
+
+Without `yt-dlp` the skill still works, just slower: take the video ID from the URL and search the web for the metadata, then ask the human to paste the transcript from YouTube's transcript panel. Say which route you are taking so they know why it takes longer.
 
 ## How to invoke
 
@@ -102,41 +113,22 @@ This is the frontmatter of the **source note** that lands in `2-Inbox/` and late
 - Metaphors and mental models
 - Q&A sections - the best nuggets hide there
 
-### 5. Save and process (Karpathy loop)
+### 5. Save the note and hand it to the ingest
 
-**Step A:** Save the note to `2-Inbox/`
+Save the note to `2-Inbox/`, then run the `ingest` skill on it. That skill owns everything downstream: mapping the video against the wiki, writing the pages, linking them, updating the index and log, and archiving the note to `5-Raw/`.
 
-**Step B:** Map the video against `4-Knowledge/index.md`. List everything it touches, marked by kind (concept or entity) and by state (primary / existing / new). Videos are entity-heavy - the speaker, their company, and every tool they name are candidates. An entity earns a page at two or more sources, or if it is central to this one.
+Tell the ingest one thing it cannot see on its own: **talks are entity-heavy.** The speaker, their company and every tool they name by name are entity candidates, and a good talk moves more pages than an article of the same length.
 
-**Step C:** Write the primary page in the right `4-Knowledge/` subfolder - readable file name, `[source: ...]` citations, and this frontmatter:
-
-```yaml
----
-title: [Readable Title]
-type: concept
-created: [YYYY-MM-DD]
-last_updated: [YYYY-MM-DD]
-source_count: [n]
-status: draft
-sources:
-  - note-file.md
----
-```
-
-**Step D:** Update every existing page the video touches, and write the entity pages that earned one (`type: entity`, `entity_kind`, short, links out to where the reasoning lives). Add what the video adds, cite it, link both ways. A 40-minute talk usually moves several pages. Updating one and stopping defeats the point.
-
-**Step E:** Move the note from `2-Inbox/` to `5-Raw/`
-
-**Step F:** Update `4-Knowledge/index.md` and append an `ingest` entry to `4-Knowledge/log.md`, listing every page you touched
+This skill's job ends at a note good enough to compile.
 
 ## Self-check
 
-- Could someone hold a conversation about this topic reading only my notes?
+- Could someone hold a conversation about this topic reading only my note?
 - For tutorials: could someone RUN the workflow without watching the video?
 - Did I capture the concrete numbers and metrics?
 - Did I catch the Q&A section?
 - Did I avoid AI filler words (delve, tapestry, pivotal, foster)?
-- Did I update the other pages this video touches, or just write one and stop?
+- Is the note in `2-Inbox/` and handed to the ingest, rather than left sitting there?
 
 ## Cleanup
 
