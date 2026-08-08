@@ -207,7 +207,7 @@ Rules:
 - **The markdown file stays canonical.** It holds the citations, the `## What this is built on` and the `## Gaps`. The HTML or the deck is a view of the answer, not a replacement for the record.
 - **Same slug, different extension.** `2026-08-06-pricing-comparison.md` and `2026-08-06-pricing-comparison.html` in `9-Outputs/`. Log the markdown; mention the other files in the same entry.
 - **HTML must be self-contained.** One file, inline CSS and JS, no CDN links, no external fonts. It has to open from disk in two years with no internet. An HTML output that needs a network is not an archive.
-- **Every chart states its finding in the title**, not its metric. The `data-analysis` skill in `7-Skills/` has the full chart standards - use them rather than inventing your own.
+- **Every chart states its finding in the title**, not its metric: "Bigger accounts churn faster", not "Churn by account size". Label every axis with its unit, and annotate the point the chart was made to show.
 - Generated images go next to their output in `9-Outputs/`, never in `5-Raw/assets/`.
 
 In Obsidian: markdown renders natively, images embed with `![[file.png]]`, HTML opens in the browser, Marp needs its community plugin.

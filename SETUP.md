@@ -128,7 +128,7 @@ Read CLAUDE.md and tell me what you see.
 /second-brain-setup
 ```
 
-The skills in `7-Skills/` are linked into `.claude/skills/`, so Claude Code picks them up as slash commands. `/process-inbox`, `/youtube` and `/data-analysis` work the same way.
+The skills in `7-Skills/` are linked into `.claude/skills/`, so Claude Code picks them up as slash commands. `/query`, `/lint`, `/project-start`, `/project-update` and `/youtube` work the same way.
 
 ---
 
