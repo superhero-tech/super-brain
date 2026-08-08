@@ -79,11 +79,9 @@ Write an entry when: a decision is made, something is built or tested, research 
 
 ## Starting a new project
 
-1. Copy `_template/` to `<project-slug>/`
-2. Fill in `brief.md` with the human - ask, do not guess
-3. Ask what rules apply. If there are none yet, leave `rules.md` with its headings and an explicit "None yet."
-4. Add the row to `index.md`
-5. Write the first `log.md` entry: `project created`
+**Run the `project-start` skill.** It creates the folder from `_template/`, interviews the human to fill `brief.md`, asks what rules apply, registers the project in `index.md` and writes the first log entry.
+
+The interview is the point. A brief nobody pushed back on says "for all users" and "success is more engagement", and a project that starts there stays there.
 
 ---
 
