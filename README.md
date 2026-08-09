@@ -32,19 +32,23 @@ We have run this method on our own work for a year and taught it to people who t
 
 **Projects you cannot pick up cold.** A brief tells you what a project was supposed to be. `project-update` keeps the log that tells you what it became, and refreshes the index so the next session starts from the truth.
 
-## What's inside
+## The skills
 
-| Skill | What it does |
-|---|---|
-| `ingest` | A source becomes wiki pages, cross-linked, cited, archived |
-| `query` | Answers from the wiki, saved to `9-Outputs/`, filed back when they add something |
-| `lint` | Monthly health check with severities and a ranked fix list |
-| `project-start` | New project through an interview that refuses vague briefs |
-| `project-update` | What happened becomes an artefact, a log entry and a fresh index row |
-| `second-brain-setup` | Your profile in `8-System/about.md`, from an assessment or a conversation |
-| `youtube` | A video becomes a source note, handed to `ingest` |
+Five workflows, one skill each, plus setup and video capture. They trigger on their own when the conversation calls for them - say "process what I dropped in the inbox" and `ingest` shows up - or you invoke them directly with `/query`.
 
-Skills trigger on their own when the conversation calls for them. Say "process what I dropped in the inbox" and `ingest` shows up. Or invoke directly: `/query`.
+**`ingest`** turns a source in `2-Inbox/` into wiki. It lists everything the source touches before writing anything and checks that reading with you, then writes the primary page and updates every other page the source has something to say about, with links in both directions. A substantial source moves five pages, or it tells you why it did not.
+
+**`query`** answers from the wiki with `[source: ...]` citations, then saves the answer to `9-Outputs/` with a section naming what the wiki could not answer. When the answer contains synthesis nobody has written down yet, it offers to file that back as a page. Questions make the wiki better instead of only spending it.
+
+**`lint`** is the monthly health check. Ten checks sorted into errors, warnings and notes: pages that contradict each other, claims with no citation, orphans, stale frontmatter, people who became hubs without a page of their own. It writes a ranked report and stops. Repair is a separate decision, and it says so.
+
+**`project-start`** opens a project through an interview that pushes back once per section. "Everyone" is not a segment, "more engagement" is not an outcome, and an empty list of open questions on day one means the project has not been thought about yet. "I do not know" is a valid answer that becomes an open question.
+
+**`project-update`** turns what happened into an artefact in the right subfolder, an entry in the project log and a fresh row in the index. Those last two are the steps that decay, because they produce nothing visible - and a stale index means the next session starts from a false picture of what is live.
+
+**`second-brain-setup`** writes your profile into `8-System/about.md`, either from a pasted assessment (Gallup, DISC, MBTI, whatever you have) or a short interview. Run it again when your role changes and it updates only what moved.
+
+**`youtube`** turns a video into a source note with metadata, key ideas and quotes, then hands it to `ingest`. It wants `yt-dlp` installed; without it, it asks you to paste the transcript and carries on.
 
 The one to try first: drop three articles on one topic into `2-Inbox/`, run `ingest` on each, then ask `query` something none of them answers on its own.
 
