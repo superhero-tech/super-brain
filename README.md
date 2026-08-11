@@ -51,7 +51,7 @@ Five workflows, one skill each, plus setup, video capture and a way to find out 
 
 The one to try first: drop three articles on one topic into `2-Inbox/`, run `ingest` on each, then ask `query` something none of them answers on its own.
 
-## What we bolted on
+## How it's different from Karpathy's method
 
 Karpathy's document is a pattern, not a build. Three layers, three operations, an index and a log - deliberately abstract, ending with a note that tells you to hand it to your agent and work the specifics out together. That is the right way to publish an idea and the wrong way to start on a Tuesday morning.
 
