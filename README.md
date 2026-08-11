@@ -51,6 +51,25 @@ Five workflows, one skill each, plus setup, video capture and a way to find out 
 
 The one to try first: drop three articles on one topic into `2-Inbox/`, run `ingest` on each, then ask `query` something none of them answers on its own.
 
+## What we bolted on
+
+Karpathy's document is a pattern, not a build. Three layers, three operations, an index and a log - deliberately abstract, ending with a note that tells you to hand it to your agent and work the specifics out together. That is the right way to publish an idea and the wrong way to start on a Tuesday morning.
+
+Super Brain is one instantiation of it with the decisions already made. Same three layers, same ingest/query/lint loop, same index-first navigation and no embeddings. What sits on top:
+
+| What we added | Why |
+|---|---|
+| **Operations as skills, not sections of a schema** | Each workflow is a `SKILL.md` with its own self-check and hard constraints, loaded only when it fires. Published to `.claude/skills/` and `.agents/skills/`, so the same vault runs on Claude and on Codex. |
+| **A project layer** | `3-Projects/`, one folder per project, with a brief, rules and an append-only log. Karpathy's wiki is a reading artefact. This one also has to hold work in progress, so an agent can join a project cold. The brief is what the project was supposed to be; the log is what it became. |
+| **A profile in a file** | `8-System/about.md` holds who you are and how you want to be worked with. It moves between tools and jobs. A system prompt does not. |
+| **A check-in before anything gets written** | `ingest` shows you its reading of a source and waits. A wrong page written today is a wrong answer in every query for a month, and nobody notices until it has been built on. This is the cheapest place to catch it. |
+| **Frontmatter that `lint` can sort on** | `status`, `source_count` and `last_updated` on every page, plus ten checks split into errors, warnings and notes, ranked by what they unblock. A page with no `last_updated` is invisible to the health check, and an unranked report gets read once. |
+| **Gaps as a required section** | Every saved answer names what the wiki could not answer. That section is what tells you which source to go and find next, and it is the one most likely to be left empty because it was easier. |
+| **`feynman`** | Explains a page in plain words and sorts what went thin into the wiki's fault, the sources' fault and its own. The failure this pattern invites and does not address is you losing the thread of a wiki that something else read for you. |
+| **A limits file the agent has to read** | `8-System/limits.md` names five ways this breaks, and `8-System/brain.md` makes the agent read it before it tells you the wiki is sure about something. |
+
+What we left out: Karpathy suggests reaching for a real search tool - [qmd](https://github.com/tobi/qmd) or something like it - once the index stops being a sufficient map. We stayed index-only and declared the ceiling instead: roughly a hundred pages, one vault per domain, both written down in [limits.md](8-System/limits.md). Naming a limit is not removing it. If your vault outgrows the index, that is the first thing to go and fix, and the original pattern already tells you how.
+
 ## What it does badly
 
 Read [8-System/limits.md](8-System/limits.md) before you trust it on anything expensive. Error compounding is real, a wiki that looks authoritative gets checked less than it should, and the index-first approach has a ceiling around a hundred pages. We would rather you knew that from us.
