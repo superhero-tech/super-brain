@@ -10,10 +10,19 @@
 # Claude Code, per-user
 .claude/settings.local.json
 
-# Leftovers from the skills
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+reel_config.json
+
+# Python venvs & cache
+venv/
+.venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.pytest_cache/
 
 # Editors
 .vscode/
@@ -22,3 +31,4 @@ __pycache__/
 # Everything else is content and belongs in git. Your wiki, your sources, your
 # outputs and your projects are versioned on purpose - git history is the undo
 # button for anything the AI gets wrong.
+
