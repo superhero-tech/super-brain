@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": 1787184177,
+    "media": [],
+    "label_values": [
+      {
+        "label": "Adres URL",
+        "value": "https://www.instagram.com/reel/DcBqrPsR6BB/",
+        "href": "https://www.instagram.com/reel/DcBqrPsR6BB/"
+      },
+      {
+        "label": "Napisy",
+        "value": "Comment CHECK and I’ll DM you the 20 point checklist and the 5 prompts.\n\nYour AI built site looks finished on the homepage, then ships with no 404 page, no meta descriptions, and forms failing in silence.\n\n#claude #ai #artificialintelligence #digitalmarketing #vibecoding"
+      },
+      {
+        "label": "Tytuł",
+        "value": ""
+      },
+      {
+        "dict": [
+          {
+            "dict": [
+              {
+                "label": "Adres URL",
+                "value": "https://quentin-ia-marketing.vercel.app"
+              },
+              {
+                "label": "Nazwa",
+                "value": "Quentin | AI & Marketing"
+              },
+              {
+                "label": "Nazwa użytkownika",
+                "value": "quentin_aimarketing"
+              }
+            ],
+            "title": ""
+          }
+        ],
+        "title": "Właściciel"
+      }
+    ],
+    "fbid": "18092719619098055"
+  }
+]
